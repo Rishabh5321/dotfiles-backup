@@ -28,7 +28,7 @@
       system = "x86_64-linux";
       host = "redmi";
       username = "rishabh";
-      wallpaper = "wall16.png";
+      wallpaper = "wall3.jpg";
     in
     {
       nixosConfigurations = {

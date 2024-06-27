@@ -16,9 +16,10 @@
           Background = lib.cleanSource ../../config/wallpapers/${wallpaper};
           ScreenWidth = 1920;
           ScreenHeight = 1080;
-          FormPosition = "center";
-          HaveFormBackground = true;
-          FullBlur = false;
+          FormPosition = "left";
+          HaveFormBackground = false;
+          PartialBlur = true;
+          HourFormat = "h:m:s ap";
           # ...
         };
       };

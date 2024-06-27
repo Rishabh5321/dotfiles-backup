@@ -15,7 +15,15 @@
 
       listener = [
         {
-          timeout = 30;
+          timeout = 60;
+          on-timeout = "notify-send 'hypridle' 'locking'";
+        }
+        {
+          timeout = 90;
+          on-timeout = "hyprlock";
+        }
+        {
+          timeout = 120;
           on-timeout = "hyprctl dispatch dpms off";
         }
       ];
