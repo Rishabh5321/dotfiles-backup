@@ -22,10 +22,16 @@ with lib;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      extraCommands = [
+        "systemctl --user start hypridle.service"
+      ];
+    };
     # plugins = [
-    #   hyprplugins.hyprtrails
-    # ];
+    #  hyprplugins.hyprtrails
+    #];
+    #settings.exec-once = [ "hypridle" ];
     extraConfig =
       let
         modifier = "SUPER";
@@ -51,7 +57,6 @@ with lib;
           exec-once = killall -q swaync;sleep .5 && swaync
           exec-once = nm-applet --indicator
           exec-once = lxqt-policykit-agent
-          exec-once = hypridle
           exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${wallpaper}
           monitor=,preferred,auto,1
           ${extraMonitorSettings}

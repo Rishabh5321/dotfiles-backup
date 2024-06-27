@@ -29,6 +29,7 @@
       gnome.gnome-disk-utility
       gnome.gnome-system-monitor
       gnome.nautilus
+      hypridle
       heroic
       jellyfin-media-player
       kodi
@@ -58,4 +59,5 @@
       #plex
     ];
     #services.plex.enable = true;
+    #services.hypridle.enable = true;
 }

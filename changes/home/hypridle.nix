@@ -1,43 +1,47 @@
 {
-  pkgs,
   lib,
+  osConfig,
   ...
-}: let
-  suspendScript = pkgs.writeShellScript "suspend-script" ''
-    ${pkgs.pipewire}/bin/pw-cli i all | ${pkgs.ripgrep}/bin/rg running
-    # only suspend if audio isn't running
-    if [ $? == 1 ]; then
-      ${pkgs.systemd}/bin/systemctl suspend
-    fi
-  '';
-in {
-  home.packages = [pkgs.hypridle];
+}: {
+  services.hypridle = {
+    enable = true;
+    settings = {
+      general = {
+        lock_cmd = "lock";
+        before_sleep_cmd = "lock";
+        # after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+      };
 
-  xdg.configFile."hypr/hypridle.conf".text = ''
-    general {
-        lock_cmd = ${lib.getExe pkgs.hyprlock}
-        before_sleep_cmd = ${pkgs.systemd}/bin/loginctl lock-session
-    }
-    # Warn
-    listener {
-        timeout = 60                            # 9 min
-        on-timeout = notify-send "You are idle!" # command to run when timeout has passed
-        on-resume = notify-send "Welcome back!"  # command to run when activity is detected after timeout has fired.
-    }
+      listener = [
+        {
+          timeout = 30;
+          on-timeout = "hyprctl dispatch dpms off";
+        }
+      ];
+    };
+  };
+  # xdg.configFile."hypr/hypridle.conf".text =
+  #   ''
+  #     general {
+  #         lock_cmd = lock
+  #         # unlock_cmd = notify-send "unlock!"
+  #         before_sleep_cmd = lock
+  #         # after_sleep_cmd = notify-send "Awake!"
+  #         ignore_dbus_inhibit = false             # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
+  #     }
 
-    listener {
-        timeout = 70                     # 10 min
-        on-timeout = loginctl lock-session # command to run when timeout has passed
-        on-resume = notify-send "Welcome back to your desktop!"  # command to run when activity is detected after timeout has fired.
-    }
-
-    listener {
-        timeout = 90                            # 10.5 min
-        on-timeout = hyprctl dispatch dpms off  # command to run when timeout has passed
-        on-resume = hyprctl dispatch dpms on    # command to run when activity is detected after timeout has fired.
-    }
-
-  '';
-  
-  services.hypridle.enable = true;
+  #     listener {
+  #         timeout = 3600
+  #         on-timeout =  lock
+  #     }
+  #   ''
+  #   + (
+  #     lib.optionalString (osConfig.networking.hostName == "xps") ''
+  #       listener {
+  #           timeout = 3660
+  #           on-timeout =  systemctl suspend
+  #       }
+  #     ''
+  #   );
 }
