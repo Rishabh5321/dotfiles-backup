@@ -14,6 +14,7 @@
         ./displaymanager.nix
         ./gaming.nix
         ./pkgs.nix
+        #./power.nix
         ./proton.nix
         ./upgrade.nix
     ];
