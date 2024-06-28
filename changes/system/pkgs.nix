@@ -39,6 +39,7 @@
       music-player
       nvtopPackages.full
       onlyoffice-bin
+      peaclock
       plex-media-player
       qbittorrent
       ranger
