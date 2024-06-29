@@ -32,7 +32,7 @@
     in
     {
       nixosConfigurations = {
-        "${host}" = nixpkgs.lib.nixosSystem {
+        "redmi" = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
             inherit inputs;
@@ -41,7 +41,7 @@
             inherit wallpaper;
           };
           modules = [
-            ./hosts/${host}/config.nix
+            ./hosts/redmi/config.nix
             inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             sddm-sugar-candy-nix.nixosModules.default
@@ -60,10 +60,42 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./hosts/${host}/home.nix;
+              home-manager.users.${username} = import ./hosts/redmi/home.nix;
             }
           ];
         };
+        "dell" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit username;
+            inherit host;
+            inherit wallpaper;
+          };
+          modules = [
+            ./hosts/dell/config.nix
+            inputs.stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            sddm-sugar-candy-nix.nixosModules.default
+            {
+              nixpkgs = {
+                overlays = [
+                  sddm-sugar-candy-nix.overlays.default
+                ];
+              };
+              home-manager.extraSpecialArgs = {
+                inherit username;
+                inherit inputs;
+                inherit host;
+                inherit wallpaper;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.${username} = import ./hosts/dell/home.nix;
+            }
+          ];
+        };        
       };
     };
 }

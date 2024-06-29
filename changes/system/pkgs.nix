@@ -43,7 +43,7 @@
       plex-media-player
       qbittorrent
       ranger
-      spotdl
+      #spotdl
       speedtest-cli
       stremio
       telegram-desktop
