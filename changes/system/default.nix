@@ -12,9 +12,9 @@
         ./boot.nix
         ./cache.nix
         ./displaymanager.nix
+        ./locale.nix
         ./gaming.nix
         ./pkgs.nix
-        ./power.nix
         ./proton.nix
         ./upgrade.nix
     ];
