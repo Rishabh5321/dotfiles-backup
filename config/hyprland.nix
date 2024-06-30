@@ -91,8 +91,6 @@ with lib;
           windowrule = float, zoom
           windowrulev2 = stayfocused, title:^()$,class:^(steam)$
           windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
-          windowrulev2 = opacity 0.9 0.7, class:^(Brave)$
-          windowrulev2 = opacity 0.9 0.7, class:^(thunar)$
           gestures {
             workspace_swipe = true
             workspace_swipe_fingers = 3
@@ -104,8 +102,8 @@ with lib;
           }
           animations {
             enabled = yes
-            bezier = wind, 0.05, 0.9, 0.1, 1.05
-            bezier = winIn, 0.1, 1.1, 0.1, 1.1
+            bezier = wind, 0.05, 0.9, 0.1, 1
+            bezier = winIn, 0.1, 1.1, 0.1, 1
             bezier = winOut, 0.3, -0.3, 0, 1
             bezier = liner, 1, 1, 1, 1
             animation = windows, 1, 6, wind, slide
@@ -148,9 +146,7 @@ with lib;
           bind = ${modifier},E,exec,emopicker9000
           bind = ${modifier},S,exec,screenshootin
           bind = ${modifier},D,exec,discord
-          bind = ${modifier},O,exec,obs
           bind = ${modifier},C,exec,hyprpicker -a
-          bind = ${modifier},G,exec,gimp
           bind = ${modifier}SHIFT,G,exec,godot4
           bind = ${modifier},T,exec,thunar
           bind = ${modifier},M,exec,spotify
