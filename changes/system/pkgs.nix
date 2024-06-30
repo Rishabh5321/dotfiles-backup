@@ -15,6 +15,7 @@
       alacritty
       android-tools
       atuin
+      bitwarden-desktop
       bottles
       brave
       clipman
@@ -29,7 +30,7 @@
       gnome.gnome-disk-utility
       gnome.gnome-system-monitor
       gnome.nautilus
-      hypridle
+      google-chrome
       heroic
       jellyfin-media-player
       kodi
@@ -38,11 +39,13 @@
       micro
       music-player
       nvtopPackages.full
+      stable.obsidian
       onlyoffice-bin
       peaclock
       plex-media-player
       qbittorrent
       ranger
+      rquickshare
       #spotdl
       speedtest-cli
       stremio
@@ -66,4 +69,14 @@
       package = pkgs.kdePackages.kdeconnect-kde;
       #indicator = true;
     };
+
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts-emoji
+      noto-fonts-cjk
+      font-awesome
+      symbola
+      material-icons
+    ];
+  };
 }
