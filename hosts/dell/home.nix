@@ -12,7 +12,7 @@ in
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "24.11";
+  home.stateVersion = "24.05";
 
   # Import Program Configurations
   imports = [
@@ -27,6 +27,8 @@ in
     ../../config/wlogout.nix
     ../../changes/home
   ];
+
+  home.enableNixpkgsReleaseCheck = false;
 
   # Place Files Inside Home Directory
   home.file."Pictures/Wallpapers" = {

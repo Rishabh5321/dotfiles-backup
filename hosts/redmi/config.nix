@@ -86,7 +86,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.hostName = host;
+  networking.hostName = "redmi";
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
   programs = {

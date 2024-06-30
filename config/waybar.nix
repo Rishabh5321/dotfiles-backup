@@ -65,8 +65,8 @@ with lib;
           on-scroll-down = "brightnessctl set 5%-";
         };
         "hyprland/window" = {
-          max-length = 40;
-          separate-outputs = false;
+          max-length = 20;
+          separate-outputs = true;
           rewrite = {
             "" = " 🙈 No Windows? ";
           };

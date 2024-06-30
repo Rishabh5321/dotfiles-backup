@@ -39,14 +39,14 @@
       micro
       music-player
       nvtopPackages.full
-      stable.obsidian
+      obsidian
       onlyoffice-bin
       peaclock
       plex-media-player
       qbittorrent
       ranger
       rquickshare
-      #spotdl
+      spotdl
       speedtest-cli
       stremio
       telegram-desktop
