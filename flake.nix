@@ -26,7 +26,7 @@
     { nixpkgs, home-manager, sddm-sugar-candy-nix, ... }@inputs:
     let
       system = "x86_64-linux";
-      host = "redmi";
+      host = "dell";
       username = "rishabh";
       wallpaper = "wall3.jpg";
     in
