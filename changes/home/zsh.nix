@@ -40,9 +40,10 @@
       cdnix = "cd ~/zaneyos && code ~/zaneyos";
       ns = "nix-shell --run zsh";
       nix-shell = "nix-shell --run zsh";
-      #nix-switch = "nh os switch ~/zaneyos";
-      #nix-switchu = "nh os switch -u ~/zaneyos && swww img /home/${username}/Pictures/Wallpapers/${wallpaper}";
+      nix-switch = "nh os switch ~/zaneyos";
+      nix-switchu = "nh os switch -u ~/zaneyos && source ~/.zshrc && wallswitch";
       #nix-flake-update = "sudo nix flake update ~/zaneyos#";
+      wallswitch = "swww img /home/${username}/Pictures/Wallpapers/${wallpaper}";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
       
       # python
