@@ -18,7 +18,7 @@
       bitwarden-desktop
       bottles
       brave
-      clipman
+      cliphist
       cursor
       fast-cli
       fastfetch
@@ -36,10 +36,10 @@
       kodi
       libreoffice
       lutris
+      joplin-desktop
       micro
       music-player
       nvtopPackages.full
-      obsidian
       onlyoffice-bin
       peaclock
       plex-media-player
