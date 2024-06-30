@@ -10,6 +10,7 @@
 {
     imports = [
         ./boot.nix
+        ./bluetooth.nix
         ./cache.nix
         ./displaymanager.nix
         ./locale.nix

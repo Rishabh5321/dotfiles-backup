@@ -73,7 +73,7 @@
   };
 
   # Extra Module Options
-  drivers.amdgpu.enable = true;
+  drivers.amdgpu.enable = false;
   drivers.nvidia.enable = false;
   drivers.nvidia-prime = {
     enable = false;
@@ -362,11 +362,6 @@
   # Extra Logitech Support
   # hardware.logitech.wireless.enable = true;
   # hardware.logitech.wireless.enableGraphical = true;
-
-  # Bluetooth Support
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
