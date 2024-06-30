@@ -15,6 +15,8 @@
         ./displaymanager.nix
         ./locale.nix
         ./gaming.nix
+        ./graphics.nix
+        ./nix_settings.nix
         ./pkgs.nix
         ./proton.nix
         ./upgrade.nix

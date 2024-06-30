@@ -256,15 +256,7 @@
     #greetd.tuigreet
   ];
 
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts-emoji
-      noto-fonts-cjk
-      font-awesome
-      symbola
-      material-icons
-    ];
-  };
+
 
   environment.variables = {
     ZANEYOS_VERSION = "2.2";
@@ -390,25 +382,7 @@
       auth include login
     '';
   };
-
-  # Optimization settings and garbage collection automation
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
-
+  
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
   virtualisation.docker = {
@@ -418,13 +392,6 @@
       setSocketVariable = true;
     };
     storageDriver = "btrfs";
-  };
-
-  # OpenGL
-  hardware.graphics = {
-    enable = true;
-    #driSupport = true;
-    #driSupport32Bit = true;
   };
 
   # Open ports in the firewall.

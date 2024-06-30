@@ -17,11 +17,11 @@
         {
           timeout = 60;
           on-timeout = "notify-send 'Hypridle' 'locking'";
-          on-resume = "notify-send 'Hypridle' 'resuming'";
         }
         {
           timeout = 90;
           on-timeout = "hyprlock";
+          on-resume = "notify-send 'Hypridle' 'resuming'";
         }
         {
           timeout = 120;
