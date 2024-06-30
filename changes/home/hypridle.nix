@@ -16,7 +16,8 @@
       listener = [
         {
           timeout = 60;
-          on-timeout = "notify-send 'hypridle' 'locking'";
+          on-timeout = "notify-send 'Hypridle' 'locking'";
+          on-resume = "notify-send 'Hypridle' 'resuming'";
         }
         {
           timeout = 90;
