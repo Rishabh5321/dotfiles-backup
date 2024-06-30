@@ -8,26 +8,26 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "usb_storage" "sd_mod" "rtsx_usb_sdmmc" "amdgpu"];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" "rtsx_usb_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "radeon.cik_support=0" "amdgpu.cik_support=1" ];
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5b0270fb-e3cc-40ad-b727-071a6a90c5e1";
+    { device = "/dev/disk/by-uuid/a33d68f6-9175-4c2e-b13c-c62f9cd91eab";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/FDE4-BBCB";
+    { device = "/dev/disk/by-uuid/207C-AD4E";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [{
-  device = "/dev/disk/by-uuid/0cd53173-227f-4fad-ab6f-e5b49ead3549";
-  } ];
+  swapDevices = [ 
+	{device = "/dev/disk/by-uuid/5f302f95-08de-442f-8007-ab027865f230";}
+	];
 
   fileSystems."/mnt/Raid" =
     { device = "/dev/disk/by-uuid/d35415ef-75c1-4708-9759-b7d1ae846559";
@@ -38,6 +38,7 @@
     { device = "/dev/disk/by-uuid/b03102c2-5807-4f8c-bcde-4de8758679b0";
       fsType = "ext4";
     };
+
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -50,4 +51,3 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
-

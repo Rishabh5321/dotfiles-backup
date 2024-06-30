@@ -42,7 +42,7 @@ in
     recursive = true;
   };
   home.file.".face.icon".source = ../../config/face.png;
-  home.file.".config/face.jpg".source = ../../config/face.jpg;
+  home.file.".config/face.png".source = ../../config/face.png;
   home.file.".config/swappy/config".text = ''
     [Default]
     save_dir=/home/${username}/Pictures/Screenshots
@@ -195,7 +195,7 @@ in
         ];
         image = [
           {
-            path = "/home/${username}/.config/face.jpg";
+            path = "/home/${username}/.config/face.png";
             size = 150;
             border_size = 4;
             border_color = "rgb(0C96F9)";
