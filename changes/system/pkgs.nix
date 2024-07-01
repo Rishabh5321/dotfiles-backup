@@ -64,11 +64,6 @@
     ];
     #services.plex.enable = true;
     #services.hypridle.enable = true;
-    programs.kdeconnect = {
-      enable = true;
-      package = pkgs.kdePackages.kdeconnect-kde;
-      #indicator = true;
-    };
 
   fonts = {
     packages = with pkgs; [
