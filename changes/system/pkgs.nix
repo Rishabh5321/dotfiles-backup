@@ -40,7 +40,7 @@
       micro
       music-player
       nvtopPackages.full
-      onlyoffice-bin
+      onlyoffice-bin_latest
       peaclock
       plex-media-player
       qbittorrent
