@@ -16,6 +16,7 @@
         ./zsh.nix
         ./chromium.nix
         ./hypridle.nix
+        ./spicetify.nix
     ];
 
     services.kdeconnect.enable = true;

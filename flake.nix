@@ -21,10 +21,12 @@
        url = "github:hyprwm/hyprland-plugins";
        inputs.hyprland.follows = "hyprland";
      };
+
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
 
   outputs =
-    { nixpkgs, home-manager, sddm-sugar-candy-nix, ... }@inputs:
+    { nixpkgs, home-manager, sddm-sugar-candy-nix, spicetify-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       host = "dell";
@@ -57,6 +59,7 @@
                 inherit inputs;
                 inherit host;
                 inherit wallpaper;
+                inherit spicetify-nix;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -89,6 +92,7 @@
                 inherit inputs;
                 inherit host;
                 inherit wallpaper;
+                inherit spicetify-nix;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

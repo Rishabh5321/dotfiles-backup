@@ -48,6 +48,7 @@
       rquickshare
       spotdl
       speedtest-cli
+      #spicetify-cli
       stremio
       telegram-desktop
       tldr
