@@ -1,4 +1,13 @@
 {
+  config,
+  pkgs,
+  host,
+  inputs,
+  username,
+  options,
+  ...
+}:
+{
   # Optimization settings and garbage collection automation
   nix = {
     settings = {
