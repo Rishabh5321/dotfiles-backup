@@ -28,6 +28,9 @@ with lib;
           "idle_inhibitor"
           "backlight"
           "custom/exit"
+          "memory"
+          "cpu"
+          "disk"
         ];
         modules-right = [
           "network#speed"
@@ -82,6 +85,7 @@ with lib;
           tooltip = true;
         };
         "disk" = {
+          interval = 5;
           format = " {free}";
           tooltip = true;
         };
@@ -263,7 +267,7 @@ with lib;
         tooltip label {
           color: #${config.stylix.base16Scheme.base08};
         }
-        #window, #cpu, #memory, #idle_inhibitor{
+        #window, #cpu, #memory, #disk, #idle_inhibitor{
           font-weight: bold;
           margin: 4px 0px;
           margin-left: 7px;
