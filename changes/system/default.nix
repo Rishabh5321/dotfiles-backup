@@ -18,7 +18,9 @@
         ./graphics.nix
         ./nix_settings.nix
         ./pkgs.nix
+        #./power.nix
         ./proton.nix
+        ./sound.nix
         ./upgrade.nix
     ];
 }

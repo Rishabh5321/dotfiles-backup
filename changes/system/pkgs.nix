@@ -43,6 +43,7 @@
       onlyoffice-bin_latest
       peaclock
       plex-media-player
+      pipewire
       qbittorrent
       ranger
       rquickshare

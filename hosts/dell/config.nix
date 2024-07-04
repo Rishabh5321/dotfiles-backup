@@ -20,6 +20,7 @@
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../changes/system
+    ./power.nix
   ];
   
   # Styling Options
@@ -329,12 +330,6 @@
       dataDir = "/home/${username}";
       configDir = "/home/${username}/.config/syncthing";
     };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
     rpcbind.enable = false;
     nfs.server.enable = false;
   };
@@ -353,11 +348,7 @@
   # Extra Logitech Support
   # hardware.logitech.wireless.enable = true;
   # hardware.logitech.wireless.enableGraphical = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-
+  
   # Security / Polkit
   security.rtkit.enable = true;
   security.polkit.enable = true;
