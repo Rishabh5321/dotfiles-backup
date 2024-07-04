@@ -1,5 +1,5 @@
 {
-  description = "ZaneyOS";
+  description = "Rishabh's Laptop";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -31,7 +31,7 @@
       system = "x86_64-linux";
       host = "dell";
       username = "rishabh";
-      wallpaper = "wall42.jpg";
+      wallpaper = "wall44.jpg";
     in
     {
       nixosConfigurations = {
