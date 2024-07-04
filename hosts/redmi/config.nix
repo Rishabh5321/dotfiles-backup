@@ -20,7 +20,7 @@
     ../../modules/vm-guest-services.nix
     ../../modules/local-hardware-clock.nix
     ../../changes/system
-    #./power.nix
+    ./power.nix
   ];
   
   # Styling Options
