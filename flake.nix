@@ -31,7 +31,7 @@
       system = "x86_64-linux";
       host = "dell";
       username = "rishabh";
-      wallpaper = "wall41.jpg";
+      wallpaper = "wall42.jpg";
     in
     {
       nixosConfigurations = {
