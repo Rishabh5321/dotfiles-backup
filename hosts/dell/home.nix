@@ -191,14 +191,14 @@ in
         background = [
           {
             path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
-            blur_passes = 3;
-            blur_size = 8;
+            blur_passes = 0;
+            blur_size = 0;
           }
         ];
         image = [
           {
             path = "/home/${username}/.config/face.png";
-            size = 150;
+            size = 40;
             border_size = 4;
             border_color = "rgb(0C96F9)";
             rounding = -1; # Negative means circle
