@@ -21,6 +21,7 @@
     ../../modules/local-hardware-clock.nix
     ../../changes/system
     ./power.nix
+    ./cockpit.nix
   ];
   
   # Styling Options
