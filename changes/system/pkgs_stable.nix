@@ -5,7 +5,6 @@
   inputs,
   username,
   options,
-  pkgs-unstable,
   ...
 }:
 {
@@ -15,11 +14,9 @@
     [
       alacritty
       android-tools
-      atuin
       bitwarden-desktop
       bottles
       brave
-      cliphist
       cursor
       fast-cli
       fastfetch
@@ -33,17 +30,15 @@
       google-chrome
       heroic
       jellyfin-media-player
-      kodi
+      kodi-wayland
       libreoffice
       lutris
       joplin-desktop
       micro
-      music-player
       nvtopPackages.full
       onlyoffice-bin_latest
       peaclock
       plex-media-player
-      pipewire
       qbittorrent
       ranger
       rquickshare

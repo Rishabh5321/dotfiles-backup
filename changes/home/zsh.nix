@@ -13,7 +13,6 @@
     initExtraFirst = ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
-      eval "$(atuin init zsh)"
       fastfetch
       #exec Hyprland
     '';

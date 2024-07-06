@@ -68,6 +68,7 @@
                 inherit host;
                 inherit wallpaper;
                 inherit spicetify-nix;
+                inherit pkgs-unstable;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -102,6 +103,7 @@
                 inherit host;
                 inherit wallpaper;
                 inherit spicetify-nix;
+                inherit pkgs-unstable;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

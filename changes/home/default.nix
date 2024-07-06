@@ -11,7 +11,7 @@
     imports = [
         #./firefox.nix
         ./direnv.nix
-        ./bat.nix
+        #./bat.nix
         ./cava.nix
         ./zsh.nix
         ./chromium.nix
