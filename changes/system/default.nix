@@ -17,7 +17,8 @@
         ./gaming.nix
         ./graphics.nix
         ./nix_settings.nix
-        ./pkgs.nix
+        ./pkgs_stable.nix
+        ./pkgs_unstable.nix
         #./power.nix
         ./proton.nix
         ./sound.nix

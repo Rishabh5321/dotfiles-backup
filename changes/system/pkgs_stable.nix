@@ -5,6 +5,7 @@
   inputs,
   username,
   options,
+  pkgs-unstable,
   ...
 }:
 {
@@ -24,7 +25,6 @@
       fastfetch
       ffmpeg-full
       firefox
-      floorp
       gh
       github-desktop
       gnome.gnome-disk-utility

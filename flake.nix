@@ -26,12 +26,19 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, sddm-sugar-candy-nix, spicetify-nix, ... }@inputs:
+    { nixpkgs, home-manager, nixpkgs-unstable, sddm-sugar-candy-nix, spicetify-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       host = "dell";
       username = "rishabh";
       wallpaper = "wall53.jpg";
+      pkgs-unstable = import nixpkgs-unstable {
+      system = "x86_64-linux";
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = _: true;
+        };
+      };  
     in
     {
       nixosConfigurations = {
@@ -42,6 +49,7 @@
             inherit username;
             inherit host;
             inherit wallpaper;
+            inherit pkgs-unstable;
           };
           modules = [
             ./hosts/redmi/config.nix
@@ -75,6 +83,7 @@
             inherit username;
             inherit host;
             inherit wallpaper;
+            inherit pkgs-unstable;
           };
           modules = [
             ./hosts/dell/config.nix
