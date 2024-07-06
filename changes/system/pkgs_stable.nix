@@ -18,6 +18,7 @@
       bottles
       brave
       cursor
+      cliphist
       fast-cli
       fastfetch
       ffmpeg-full
