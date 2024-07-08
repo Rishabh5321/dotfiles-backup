@@ -80,7 +80,7 @@ in
   };
 
 
-
+  
 
   # Scripts
   home.packages = [

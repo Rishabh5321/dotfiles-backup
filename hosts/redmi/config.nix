@@ -232,7 +232,7 @@
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "us";
         variant = "";
