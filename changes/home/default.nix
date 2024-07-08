@@ -13,6 +13,7 @@
         ./direnv.nix
         #./bat.nix
         ./cava.nix
+        #./idleinhibitor.nix
         ./git.nix
         ./zsh.nix
         ./chromium.nix

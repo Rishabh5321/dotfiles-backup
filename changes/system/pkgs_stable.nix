@@ -52,6 +52,7 @@
       uwufetch
       vlc
       vscode
+      wayland-pipewire-idle-inhibit
       xfce.xfce4-pulseaudio-plugin
       zinit
       zsh
