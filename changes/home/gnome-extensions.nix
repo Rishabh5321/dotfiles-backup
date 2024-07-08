@@ -17,7 +17,9 @@
       { package = pkgs.gnomeExtensions.pip-on-top; }
       { package = pkgs.gnomeExtensions.dash-to-dock; }
       { package = pkgs.gnomeExtensions.alphabetical-app-grid; }
-      { package = pkgs.gnomeExtensions.openweather; }
+      { package = pkgs.gnomeExtensions.blur-my-shell; }
+      { package = pkgs.gnomeExtensions.impatience; }
+      { package = pkgs.gnomeExtensions.system-monitor; }
       # "Play lofi music on your Gnome desktop with just a click!"
       #   https://github.com/eucaue/gnome-shell-extension-quick-lofi
     ];
@@ -119,9 +121,24 @@
     "org/gnome/shell/extensions/dash-to-dock" = {
     };
 
-    "org/gnome/shell/extensions/openweather" = {
-      location = "Nashik";
-      unit = "celsius";
+
+    "org/gnome/shell/extensions/gsconnect" = {
+      autostart = true;
+      show-indicator = true;
+      use-gnome-shell-notifications = true;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      brightness = 0.8;
+      sigma = 30;
+      noise = 0.1;
+      panel-blur = true;
+      dash-blur = true;
+      overview-blur = true;
+    };
+
+    "org/gnome/shell/extensions/impatience" = {
+      speed-factor = 0.75;
     };
 
     #"org/gnome/shell/extensions/ddterm" = {
