@@ -47,12 +47,6 @@ in
       tap-to-click = true;
     };
 
-    "org/gnome/login-screen" = {
-      banner-message-enable = true;
-      banner-message-text = "Welcome to your system!";
-      background = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
-    };
-
     # settings mouse follows focus
     "org/gnome/desktop/wm/preferences" = {
       focus-mode = "sloppy";

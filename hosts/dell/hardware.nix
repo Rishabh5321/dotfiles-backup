@@ -8,11 +8,11 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" "rtsx_usb_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" "rtsx_usb_sdmmc" "amdgpu" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
+  boot.kernelParams = [ "radeon.cik_support=0" "amdgpu.cik_support=1" ];
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a33d68f6-9175-4c2e-b13c-c62f9cd91eab";
       fsType = "btrfs";
