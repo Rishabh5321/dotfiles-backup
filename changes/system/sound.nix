@@ -22,7 +22,4 @@
     #jack.enable = true;
   };
   hardware.pulseaudio.enable = false;
-  # Enable Bluetooth service
-  services.blueman.enable = true;
-
 }

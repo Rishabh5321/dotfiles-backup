@@ -160,11 +160,11 @@
         };
       };
     };
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      xwayland.enable = true;
-    };
+    #hyprland = {
+    #  enable = true;
+    #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    #  xwayland.enable = true;
+    #};
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;

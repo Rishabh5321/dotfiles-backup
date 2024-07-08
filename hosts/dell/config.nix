@@ -81,7 +81,7 @@
     intelBusID = "";
     nvidiaBusID = "";
   };
-  drivers.intel.enable = true;
+  drivers.intel.enable = false;
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
@@ -161,11 +161,11 @@
         };
       };
     };
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      xwayland.enable = true;
-    };
+    #hyprland = {
+    #  enable = true;
+    #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    #  xwayland.enable = true;
+    #};
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -270,12 +270,12 @@
     enable = true;
     wlr.enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal
     ];
     configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+      #pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal
     ];
   };
@@ -283,7 +283,7 @@
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "us";
         variant = "";

@@ -14,15 +14,12 @@
         #./bat.nix
         ./cava.nix
         #./idleinhibitor.nix
+        ./gnome.nix
+        ./gnome-extensions.nix
         ./git.nix
         ./zsh.nix
         ./chromium.nix
         ./hypridle.nix
         ./spicetify.nix
     ];
-
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
-  };
 }
