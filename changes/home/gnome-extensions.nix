@@ -20,6 +20,7 @@
       { package = pkgs.gnomeExtensions.blur-my-shell; }
       { package = pkgs.gnomeExtensions.impatience; }
       { package = pkgs.gnomeExtensions.system-monitor; }
+      #{ package = pkgs.gnomeExtensions.github-actions; }
       # "Play lofi music on your Gnome desktop with just a click!"
       #   https://github.com/eucaue/gnome-shell-extension-quick-lofi
     ];
@@ -103,6 +104,9 @@
       tray-pos = "right";
     };
 
+    "org/gnome/shell/extensions/git" = {
+    };
+
     "org/gnome/shell/extensions/caffeine" = {
       indicator-position = -1;
       indicator-position-index = -1;
@@ -138,12 +142,13 @@
     };
 
     "org/gnome/shell/extensions/impatience" = {
-      speed-factor = 0.75;
+      speed-factor = 0.5;
     };
 
     #"org/gnome/shell/extensions/ddterm" = {
     #  keyboard-activation-shortcut = "<Super>t";
     #};
+
 
     #"org/gnome/shell/extensions/pano" = {
     #  history-length = 500;

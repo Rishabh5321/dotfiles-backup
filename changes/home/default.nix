@@ -17,6 +17,7 @@
         ./gnome.nix
         ./gnome-extensions.nix
         ./git.nix
+        ./stylix.nix
         ./zsh.nix
         ./chromium.nix
         ./hypridle.nix

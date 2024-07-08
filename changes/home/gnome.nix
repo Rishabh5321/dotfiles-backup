@@ -79,7 +79,7 @@ in
     "org/gnome/desktop/wm/keybindings" = {
       toggle-message-tray = ["<Super>m"]; # Free up <Super>m
       close = [ "<Super>q" ];
-      search = [ "Search" ]; # change search keybind to default
+      search = [ "<Super><Shift>Enter" ]; # change search keybind to super shift enter
       toggle-fullscreen = [ "<Super>f" ];
       switch-windows = [ "<Alt>Tab" ];
       switch-to-workspace-left = [ "<Control><Super>Left" ];

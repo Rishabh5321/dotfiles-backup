@@ -23,6 +23,7 @@
         #./power.nix
         ./proton.nix
         ./sound.nix
+        ./stylix.nix
         ./upgrade.nix
     ];
 }

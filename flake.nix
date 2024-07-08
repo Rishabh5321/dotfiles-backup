@@ -72,7 +72,7 @@
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+              home-manager.backupFileExtension = "rebuild";
               home-manager.users.${username} = import ./hosts/redmi/home.nix;
             }
           ];
@@ -107,7 +107,7 @@
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+              home-manager.backupFileExtension = "rebuild";
               home-manager.users.${username} = import ./hosts/dell/home.nix;
             }
           ];
