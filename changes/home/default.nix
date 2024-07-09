@@ -21,7 +21,7 @@
         #./pfetch.nix
         ./stylix.nix
         ./zsh.nix
-        ./chromium.nix
+        #./chromium.nix
         ./hypridle.nix
         ./spicetify.nix
     ];
