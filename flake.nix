@@ -31,7 +31,7 @@
       system = "x86_64-linux";
       host = "dell";
       username = "rishabh";
-      wallpaper = "wall9.jpg";
+      wallpaper = "wall20.png";
       pkgs-unstable = import nixpkgs-unstable {
       system = "x86_64-linux";
       config = {
