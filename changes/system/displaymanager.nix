@@ -26,6 +26,12 @@
           # ...
         };
       };
+      settings = {
+        Autologin = {
+          Session = "hyprland";
+          User = "${username}";
+        };
+      };
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
