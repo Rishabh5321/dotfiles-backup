@@ -11,10 +11,8 @@
       { package = pkgs.gnomeExtensions.appindicator; }
       { package = pkgs.gnomeExtensions.caffeine; }
       { package = pkgs.gnomeExtensions.clipboard-indicator; }
-      { package = pkgs.gnomeExtensions.ddterm; }
-      { package = pkgs.gnomeExtensions.just-perfection; }
+      #{ package = pkgs.gnomeExtensions.just-perfection; }
       { package = pkgs.gnomeExtensions.gsconnect; }
-      { package = pkgs.gnomeExtensions.pip-on-top; }
       { package = pkgs.gnomeExtensions.dash-to-dock; }
       { package = pkgs.gnomeExtensions.alphabetical-app-grid; }
       { package = pkgs.gnomeExtensions.blur-my-shell; }
@@ -27,15 +25,6 @@
   };
 
   dconf.settings = {
-
-    # https://github.com/rafaelmardojai/blanket
-    #   "Improve focus and increase your productivity by listening to different
-    #   sounds. Or allows you to fall asleep in a noisy environment"
-    "com/rafaelmardojai/Blanket" = {
-      autostart = false;
-      background-playback = true;
-      start-paused = false;
-    };
 
     "org/gnome/shell/extensions/just-perfection" = {
       dash = false;
@@ -122,10 +111,6 @@
       refresh-interval = 61;
     };
 
-    "org/gnome/shell/extensions/dash-to-dock" = {
-    };
-
-
     "org/gnome/shell/extensions/gsconnect" = {
       autostart = true;
       show-indicator = true;
@@ -148,6 +133,7 @@
     #"org/gnome/shell/extensions/ddterm" = {
     #  keyboard-activation-shortcut = "<Super>t";
     #};
+
 
 
     #"org/gnome/shell/extensions/pano" = {

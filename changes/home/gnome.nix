@@ -23,6 +23,7 @@ in
       clock-format = "12h";
       enable-hot-corners = false;
       show-battery-percentage = true;
+      color-scheme = "prefer-dark";
     };
 
     "org/gnome/shell" = {
@@ -38,9 +39,15 @@ in
         "net.lutris.Lutris.desktop"
         "cursor.desktop"
         "discord.desktop"
-        "${pkgs.telegram-desktop}/share/applications/telegramdesktop.desktop"
+        "telegramdesktop.desktop"
         "plexmediaplayer.desktop"
       ];
+    };
+
+    "org/gnome/login-screen" = {
+      banner-message-enable = true;
+      banner-message-text = "Welcome to your system!";
+      background = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
