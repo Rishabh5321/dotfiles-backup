@@ -3,7 +3,6 @@
 {
   services.displayManager = {
     enable = true;
-    execCmd = "hypridle";
     sddm = {
       enable = true;
       wayland = {
@@ -24,6 +23,7 @@
           MainColor = "#${config.stylix.base16Scheme.base03}";
           AccentColor = "#${config.stylix.base16Scheme.base04}";
           BackgroundColor = "#${config.stylix.base16Scheme.base03}";
+          DisplayOffTimeout = 60; # Display off after 60 seconds
           # ...
         };
       };
