@@ -3,12 +3,12 @@
 {
   services.displayManager = {
     enable = true;
+    execCmd = "hypridle";
     sddm = {
       enable = true;
       wayland = {
         enable = true;
       };
-      execCmd = "hypridle";
       sugarCandyNix = {
         enable = true; # This set SDDM's theme to "sddm-sugar-candy-nix".
         settings = {
