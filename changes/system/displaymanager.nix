@@ -26,14 +26,11 @@
           # ...
         };
       };
-      #settings = {
-      #  Autologin = {
-      #    Session = "hyprland";
-      #    User = "${username}";
-      #  };
-      #};
       settings = {
-        DisplayTimeout = 60;
+        Autologin = {
+          Session = "hyprland";
+          User = "${username}";
+        };
       };
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
