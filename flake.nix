@@ -23,6 +23,8 @@
      };
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
   };
 
   outputs =

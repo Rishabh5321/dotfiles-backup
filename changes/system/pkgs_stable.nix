@@ -32,6 +32,7 @@
       gnome.nautilus
       google-chrome
       heroic
+      inputs.nix-software-center.packages.${system}.nix-software-center
       jellyfin-media-player
       kodi-wayland
       libreoffice
