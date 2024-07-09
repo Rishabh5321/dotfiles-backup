@@ -26,6 +26,7 @@
           # ...
         };
       };
+      services.displayManager.defaultSession = "Hyprland";
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
