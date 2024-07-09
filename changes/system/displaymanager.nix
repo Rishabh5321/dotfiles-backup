@@ -33,6 +33,10 @@
       #    User = "${username}";
       #  };
       #};
+      settings = {
+        DisplayServer = "wayland";
+        DisplayTimeout = 60;
+      };
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
