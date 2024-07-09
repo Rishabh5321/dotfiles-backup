@@ -24,15 +24,5 @@
 
   # Enable thermald (only necessary if on Intel CPUs)
   services.thermald.enable = true;
-  
-
-
-    services.displayManager.sddm = {
-      enable = true;
-      autoLogin = {
-        enable = true;
-        user = "${username}";
-    };
-  };
 
 }
