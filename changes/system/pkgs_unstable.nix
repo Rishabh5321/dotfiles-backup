@@ -11,7 +11,7 @@
     environment.systemPackages = let
     in with pkgs-unstable;
     [
-      floorp
+      
       #plex
     ];
     #services.plex.enable = true;

@@ -13,7 +13,7 @@
         ./direnv.nix
         #./bat.nix
         ./cava.nix
-        ./conky.nix
+        #./conky.nix
         #./idleinhibitor.nix
         ./gnome.nix
         ./gnome-extensions.nix
