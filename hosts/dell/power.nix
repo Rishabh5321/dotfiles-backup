@@ -1,16 +1,16 @@
 { config, pkgs, username, ... }:
 
 {
-#  services.displayManager.sddm = {
-#    enable = true;
-#    autoLogin = {
-#      enable = true;
-#      user = "${username}";
-#    };
-#  };
-  services.xserver.displayManager.gdm= {
+  services.displayManager.sddm = {
     enable = true;
-    autoSuspend = false;
+    autoLogin = {
+      enable = true;
+      user = "${username}";
+    };
   };
+#  services.xserver.displayManager.gdm= {
+#    enable = true;
+#    autoSuspend = false;
+#  };
 
 }
