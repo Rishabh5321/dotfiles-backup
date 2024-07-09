@@ -8,6 +8,7 @@
       wayland = {
         enable = true;
       };
+      execCmd = "hypridle";
       sugarCandyNix = {
         enable = true; # This set SDDM's theme to "sddm-sugar-candy-nix".
         settings = {
@@ -26,12 +27,12 @@
           # ...
         };
       };
-      settings = {
-        Autologin = {
-          Session = "hyprland";
-          User = "${username}";
-        };
-      };
+      #settings = {
+      #  Autologin = {
+      #    Session = "hyprland";
+      #    User = "${username}";
+      #  };
+      #};
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
