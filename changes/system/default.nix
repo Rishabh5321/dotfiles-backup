@@ -12,7 +12,7 @@
         ./boot.nix
         ./bluetooth.nix
         ./cache.nix
-        #./displaymanager.nix
+        ./displaymanager.nix
         ./locale.nix
         ./gaming.nix
         ./graphics.nix
@@ -20,7 +20,7 @@
         ./pkgs_stable.nix
         ./pkgs_unstable.nix
         ./program.nix
-        ./desktop_env.nix
+        #./desktop_env.nix
         #./power.nix
         ./proton.nix
         ./sound.nix

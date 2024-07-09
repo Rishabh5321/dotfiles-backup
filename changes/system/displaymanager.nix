@@ -1,5 +1,10 @@
 { pkgs, config, lib, wallpaper, ... }:
 
+  services.xserver.displayManager.autoSuspend = {
+    enable = true;
+    delay = 60; # Time in seconds
+  };
+
 {
   services.displayManager = {
     enable = true;

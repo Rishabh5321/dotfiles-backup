@@ -15,8 +15,8 @@
         ./cava.nix
         #./conky.nix
         #./idleinhibitor.nix
-        ./gnome.nix
-        ./gnome-extensions.nix
+        #./gnome.nix
+        #./gnome-extensions.nix
         ./git.nix
         ./stylix.nix
         ./zsh.nix
