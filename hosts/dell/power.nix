@@ -5,7 +5,7 @@
     enable = true;
     autoLogin = {
       enable = true;
-      user = "rishabh";
+      user = "${username}";
     };
   };
 #  services.xserver.displayManager.gdm= {

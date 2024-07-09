@@ -1,10 +1,14 @@
-{ pkgs, config, lib, wallpaper, ... }:
+{ pkgs, config, lib, wallpaper, username, ... }:
 
 {
   services.displayManager = {
     enable = true;
     sddm = {
       enable = true;
+      autoLogin = {
+        enable = true;
+        user = "${username}";
+      };
       wayland = {
         enable = true;
       };
