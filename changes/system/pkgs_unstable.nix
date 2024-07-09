@@ -11,7 +11,7 @@
     environment.systemPackages = let
     in with pkgs-unstable;
     [
-      
+      vscode
       #plex
     ];
     #services.plex.enable = true;
