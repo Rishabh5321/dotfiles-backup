@@ -26,12 +26,11 @@
           # ...
         };
       };
-      defaultSession = "Hyprland";
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
   };
-  #services.displayManager.defaultSession = "Hyprland";
+  services.displayManager.defaultSession = "Hyprland";
   services.libinput.enable = true;
 
   environment.systemPackages =
