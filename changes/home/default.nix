@@ -18,6 +18,7 @@
         #./gnome.nix
         #./gnome-extensions.nix
         ./git.nix
+        ./pfetch.nix
         ./stylix.nix
         ./zsh.nix
         ./chromium.nix

@@ -41,6 +41,7 @@
       micro
       nvtopPackages.full
       onlyoffice-bin_latest
+      pfetch-rs
       peaclock
       plex-media-player
       qbittorrent
