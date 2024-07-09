@@ -30,7 +30,7 @@
       autoNumlock = true;
     };
   };
-  services.displayManager.defaultSession = "Hyprland";
+  services.displayManager.defaultSession = "hyprland";
   services.libinput.enable = true;
 
   environment.systemPackages =
