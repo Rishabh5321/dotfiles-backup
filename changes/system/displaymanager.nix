@@ -21,8 +21,8 @@
           PartialBlur = true;
           HourFormat = "h:m:s ap";
           MainColor = "#${config.stylix.base16Scheme.base03}";
-          AccentColor = "#${config.stylix.base16Scheme.base02}";
-          #BackgroundColor = "#${config.stylix.base16Scheme.base09}";
+          AccentColor = "#${config.stylix.base16Scheme.base04}";
+          BackgroundColor = "#${config.stylix.base16Scheme.base03}";
           # ...
         };
       };
