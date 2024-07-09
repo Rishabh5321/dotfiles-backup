@@ -20,7 +20,7 @@
           HaveFormBackground = false;
           PartialBlur = true;
           HourFormat = "h:m:s ap";
-          MainColor = "#${config.stylix.base16Scheme.base05}";
+          MainColor = "#${config.stylix.base16Scheme.base03}";
           AccentColor = "#${config.stylix.base16Scheme.base02}";
           #BackgroundColor = "#${config.stylix.base16Scheme.base09}";
           # ...
