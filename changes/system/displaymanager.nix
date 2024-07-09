@@ -28,6 +28,7 @@
       };
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
+      suspendAt = 60; # Enable suspend at 60 sec
     };
   };
   #services.displayManager.defaultSession = "Hyprland";
