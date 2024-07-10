@@ -170,14 +170,16 @@ in
         background = [
           {
             path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
-            blur_passes = 0;
-            blur_size = 0;
+            blur_passes = 3;
+            blur_size = 8;
           }
         ];
         input-field = [
           {
-            size = "200, 50";
-            position = "0, -80";
+            size = "200, 50"; 
+            position = "0, -120";
+            halign = "center";
+            valign = "center";
             monitor = "";
             dots_center = true;
             fade_on_empty = false;
