@@ -8,7 +8,7 @@
   system.autoUpgrade = {
     enable = true;
     operation = "switch"; # If you don't want to apply updates immediately, only after rebooting, use `boot` option in this case
-    flake = "/home/rishabh/zaneyos";
+    flake = "/home/rishabh/dotfiles";
     flags = [ "--update-input" "nixpkgs" "--update-input" "--commit-lock-file" ];
     dates = "weekly";
     # channel = "https://nixos.org/channels/nixos-unstable";

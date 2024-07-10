@@ -36,28 +36,28 @@ fi
 echo "-----"
 
 backupname=$(date "+%Y-%m-%d-%H-%M-%S")
-if [ -d "zaneyos" ]; then
-  echo "ZaneyOS exists, backing up to .config/zaneyos-backups folder."
-  if [ -d ".config/zaneyos-backups" ]; then
-    echo "Moving current version of ZaneyOS to backups folder."
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+if [ -d "dotfiles" ]; then
+  echo "dotfiles exists, backing up to .config/dotfiles-backups folder."
+  if [ -d ".config/dotfiles-backups" ]; then
+    echo "Moving current version of dotfiles to backups folder."
+    mv "$HOME"/dotfiles .config/dotfiles-backups/"$backupname"
     sleep 1
   else
-    echo "Creating the backups folder & moving ZaneyOS to it."
-    mkdir -p .config/zaneyos-backups
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+    echo "Creating the backups folder & moving dotfiles to it."
+    mkdir -p .config/dotfiles-backups
+    mv "$HOME"/dotfiles .config/dotfiles-backups/"$backupname"
     sleep 1
   fi
 else
-  echo "Thank you for choosing ZaneyOS."
+  echo "Thank you for choosing dotfiles."
   echo "I hope you find your time here enjoyable!"
 fi
 
 echo "-----"
 
-echo "Cloning & Entering ZaneyOS Repository"
-git clone https://gitlab.com/zaney/zaneyos.git
-cd zaneyos || exit
+echo "Cloning & Entering dotfiles Repository"
+git clone https://gitlab.com/Rishabh5321/dotfiles.git
+cd dotfiles || exit
 mkdir hosts/"$hostName"
 cp hosts/default/*.nix hosts/"$hostName"
 git config --global user.name "installer"
@@ -82,4 +82,4 @@ NIX_CONFIG="experimental-features = nix-command flakes"
 
 echo "-----"
 
-sudo nixos-rebuild switch --flake ~/zaneyos/#${hostName}
+sudo nixos-rebuild switch --flake ~/dotfiles/#${hostName}
