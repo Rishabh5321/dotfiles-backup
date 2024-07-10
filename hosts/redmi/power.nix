@@ -25,4 +25,9 @@
   # Enable thermald (only necessary if on Intel CPUs)
   services.thermald.enable = true;
 
+
+  services.logind.lidSwitch = "suspend-then-hibernate";
+
+  services.logind.lidSwitchDocked = "ignore";
+
 }
