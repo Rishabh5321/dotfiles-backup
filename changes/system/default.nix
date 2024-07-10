@@ -25,6 +25,7 @@
         ./proton.nix
         ./sound.nix
         ./stylix.nix
+        ./swap.nix
         ./upgrade.nix
     ];
 }
