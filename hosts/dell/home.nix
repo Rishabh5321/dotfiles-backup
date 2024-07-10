@@ -174,18 +174,6 @@ in
             blur_size = 0;
           }
         ];
-        image = [
-          {
-            path = "/home/${username}/.config/face.png";
-            size = 40;
-            border_size = 4;
-            border_color = "rgb(0C96F9)";
-            rounding = -1; # Negative means circle
-            position = "0, 200";
-            halign = "center";
-            valign = "center";
-          }
-        ];
         input-field = [
           {
             size = "200, 50";
