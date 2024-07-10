@@ -1,5 +1,14 @@
-{...}:
-{    kitty = {
+{
+  config,
+  pkgs,
+  host,
+  inputs,
+  username,
+  options,
+  ...
+}: 
+{    
+  programs.kitty = {
       enable = true;
       package = pkgs.kitty;
       settings = {
