@@ -1,5 +1,6 @@
 { config, pkgs, username ,... }:
 
+
 {
 
   # Better scheduling for CPU cycles - thanks System76!!!
@@ -25,8 +26,17 @@
   # Enable thermald (only necessary if on Intel CPUs)
   services.thermald.enable = true;
 
+  services.upower.enable = true;
 
-  services.logind.lidSwitch = "suspend-then-hibernate";
+  systemd.sleep.extraConfig = ''
+  AllowSuspend=no
+  AllowHibernation=no
+  AllowHybridSleep=no
+  AllowSuspendThenHibernate=no
+  '';
+
+
+  services.logind.lidSwitch = "suspend";
 
   services.logind.lidSwitchDocked = "ignore";
 
