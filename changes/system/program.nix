@@ -196,5 +196,6 @@
         thunar-volman
       ];
     };
+    gamemode.enable = true;
   };
 }

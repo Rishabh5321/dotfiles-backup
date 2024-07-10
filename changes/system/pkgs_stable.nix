@@ -35,6 +35,7 @@
       inputs.nix-software-center.packages.${system}.nix-software-center
       jellyfin-media-player
       kodi-wayland
+      lazydocker
       libreoffice
       lutris
       joplin-desktop
@@ -44,6 +45,7 @@
       pfetch-rs
       peaclock
       plex-media-player
+      #prismlauncher
       qbittorrent
       ranger
       rquickshare
@@ -73,6 +75,7 @@
       noto-fonts-cjk
       font-awesome
       symbola
+      powerline      
       material-icons
     ];
   };
