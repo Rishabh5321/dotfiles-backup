@@ -9,20 +9,20 @@
 }: 
 {
     imports = [
-        #./firefox.nix
-        ./direnv.nix
-        #./bat.nix
         ./cava.nix
+        ./chromium.nix
         #./conky.nix
-        #./idleinhibitor.nix
-        #./gnome.nix
-        #./gnome-extensions.nix
+        ./direnv.nix
+        #./firefox.nix
         ./git.nix
-        #./pfetch.nix
+        #./gnome-extensions.nix
+        #./gnome.nix
+        ./hypridle.nix
+        ./hyprlock.nix
+        #./idleinhibitor.nix
+        ./kitty.nix
+        ./spicetify.nix
         ./stylix.nix
         ./zsh.nix
-        #./chromium.nix
-        ./hypridle.nix
-        ./spicetify.nix
     ];
 }
