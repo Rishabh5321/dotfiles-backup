@@ -25,9 +25,9 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ 
-	{device = "/dev/disk/by-uuid/5f302f95-08de-442f-8007-ab027865f230";}
-	];
+  #swapDevices = [ 
+	#{device = "/dev/disk/by-uuid/5f302f95-08de-442f-8007-ab027865f230";}
+	#];
 
   fileSystems."/mnt/Raid" =
     { device = "/dev/disk/by-uuid/d35415ef-75c1-4708-9759-b7d1ae846559";
