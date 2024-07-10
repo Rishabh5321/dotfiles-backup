@@ -11,6 +11,12 @@
     environment.systemPackages = let
     in with pkgs-unstable;
     [
+      heroic
+      inputs.nix-software-center.packages.${system}.nix-software-center
+      kdeconnect
+      lutris
+      protonup-qt
+      rquickshare
       vscode
       #plex
     ];

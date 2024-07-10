@@ -31,16 +31,11 @@
       gnome.gnome-system-monitor
       gnome.nautilus
       google-chrome
-      heroic
-      inputs.nix-software-center.packages.${system}.nix-software-center
       jellyfin-media-player
       kodi-wayland
       lazydocker
       libreoffice
-      lutris
-      joplin-desktop
       micro
-      nvtopPackages.full
       onlyoffice-bin_latest
       pfetch-rs
       peaclock
@@ -48,7 +43,6 @@
       #prismlauncher
       qbittorrent
       ranger
-      rquickshare
       spotdl
       speedtest-cli
       #spicetify-cli
