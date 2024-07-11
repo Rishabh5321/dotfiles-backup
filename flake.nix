@@ -10,6 +10,7 @@
     stylix.url = "github:danth/stylix";
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     fine-cmdline = {
       url = "github:VonHeikemen/fine-cmdline.nvim";
