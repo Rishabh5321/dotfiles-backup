@@ -7,9 +7,9 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "lock";
+        lock_cmd = "hyprlock";
         before_sleep_cmd = "lock";
-        # after_sleep_cmd = "hyprctl dispatch dpms on";
+        after_sleep_cmd = "hyprctl dispatch dpms on";
         ignore_dbus_inhibit = false;
       };
 
