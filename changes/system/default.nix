@@ -27,5 +27,6 @@
         ./stylix.nix
         ./swap.nix
         ./upgrade.nix
+        ./users.nix
     ];
 }
