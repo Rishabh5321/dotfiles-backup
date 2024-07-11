@@ -22,7 +22,7 @@
       distrobox
       fast-cli
       fastfetch
-      ffmpeg-full
+      ffmpeg
       firefox
       floorp
       gh
