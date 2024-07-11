@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   # Git
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.git.enable
   # Aliases config in ./configs/git-aliases.nix
@@ -22,7 +20,6 @@
   # programs.git.delta.enable = true;
   programs.git.difftastic.enable = true;
   programs.git.difftastic.display = "inline";
-
 
   # GitHub CLI
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.gh.enable

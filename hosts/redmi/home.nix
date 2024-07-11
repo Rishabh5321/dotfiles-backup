@@ -4,11 +4,9 @@
   host,
   wallpaper,
   ...
-}:
-let
+}: let
   inherit (import ../../changes/system/variables.nix) gitUsername gitEmail;
-in
-{
+in {
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
@@ -29,7 +27,7 @@ in
   ];
 
   home.enableNixpkgsReleaseCheck = false;
-  
+
   # Place Files Inside Home Directory
   home.file."Pictures/Wallpapers" = {
     source = ../../config/wallpapers;
@@ -58,13 +56,12 @@ in
     fill_shape=false
   '';
 
-
   # Install & Configure Git
- # programs.git = {
- #   enable = true;
- #   userName = "${gitUsername}";
- #   userEmail = "${gitEmail}";
- # };
+  # programs.git = {
+  #   enable = true;
+  #   userName = "${gitUsername}";
+  #   userEmail = "${gitEmail}";
+  # };
 
   # Create XDG Dirs
   xdg = {
@@ -76,24 +73,24 @@ in
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = [ "qemu:///system" ];
-      uris = [ "qemu:///system" ];
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 
   # Scripts
   home.packages = [
-    (import ../../scripts/emopicker9000.nix { inherit pkgs; })
-    (import ../../scripts/task-waybar.nix { inherit pkgs; })
-    (import ../../scripts/squirtle.nix { inherit pkgs; })
-    (import ../../scripts/nvidia-offload.nix { inherit pkgs; })
+    (import ../../scripts/emopicker9000.nix {inherit pkgs;})
+    (import ../../scripts/task-waybar.nix {inherit pkgs;})
+    (import ../../scripts/squirtle.nix {inherit pkgs;})
+    (import ../../scripts/nvidia-offload.nix {inherit pkgs;})
     (import ../../scripts/wallsetter.nix {
       inherit pkgs;
       inherit username;
     })
-    (import ../../scripts/web-search.nix { inherit pkgs; })
-    (import ../../scripts/rofi-launcher.nix { inherit pkgs; })
-    (import ../../scripts/screenshootin.nix { inherit pkgs; })
+    (import ../../scripts/web-search.nix {inherit pkgs;})
+    (import ../../scripts/rofi-launcher.nix {inherit pkgs;})
+    (import ../../scripts/screenshootin.nix {inherit pkgs;})
     (import ../../scripts/list-hypr-bindings.nix {
       inherit pkgs;
       inherit host;
@@ -101,7 +98,6 @@ in
   ];
 
   services = {
-
   };
 
   programs = {

@@ -1,5 +1,10 @@
-{ pkgs, lib, inputs, spicetify-nix, ... }:
 {
+  pkgs,
+  lib,
+  inputs,
+  spicetify-nix,
+  ...
+}: {
   # Styling Options
   stylix.targets.waybar.enable = false;
   stylix.targets.rofi.enable = false;
@@ -18,7 +23,7 @@
   };
   qt = {
     enable = true;
-    style.name = "Adw-gtk3"; 
+    style.name = "Adw-gtk3";
     platformTheme.name = "gtk3";
   };
 }

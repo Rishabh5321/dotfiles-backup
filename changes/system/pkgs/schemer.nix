@@ -1,15 +1,17 @@
-{ pkgs, fetchgit, ... }:
-let 
+{
+  pkgs,
+  fetchgit,
+  ...
+}: let
   musl = pkgs.musl;
   libvirt = pkgs.libvirt;
   libxml2 = pkgs.libxml2;
-in
-{
+in {
   schemer = pkgs.buildGoPackage rec {
     pname = "schemer2";
     version = "2";
     vendorHash = null;
-    goPackagePath = "https://github.com/thefryscorer/schemer2"; 
+    goPackagePath = "https://github.com/thefryscorer/schemer2";
     src = fetchgit {
       url = "https://github.com/thefryscorer/schemer2";
       hash = "sha256-EKjVz4NkxtxqGissFwlzUahFut9UAxS8icxx3V7aNnw=";

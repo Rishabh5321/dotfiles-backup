@@ -6,23 +6,22 @@
   username,
   options,
   ...
-}: 
-{
-    imports = [
-        ./cava.nix
-        ./chromium.nix
-        #./conky.nix
-        ./direnv.nix
-        #./firefox.nix
-        ./git.nix
-        #./gnome-extensions.nix
-        #./gnome.nix
-        ./hypridle.nix
-        ./hyprlock.nix
-        #./idleinhibitor.nix
-        ./kitty.nix
-        ./spicetify.nix
-        ./stylix.nix
-        ./zsh.nix
-    ];
+}: {
+  imports = [
+    ./cava.nix
+    ./chromium.nix
+    #./conky.nix
+    ./direnv.nix
+    #./firefox.nix
+    ./git.nix
+    #./gnome-extensions.nix
+    #./gnome.nix
+    ./hypridle.nix
+    ./hyprlock.nix
+    #./idleinhibitor.nix
+    ./kitty.nix
+    ./spicetify.nix
+    ./stylix.nix
+    ./zsh.nix
+  ];
 }

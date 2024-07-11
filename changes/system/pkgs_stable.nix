@@ -6,12 +6,11 @@
   username,
   options,
   ...
-}:
-{
-    environment.systemPackages = let
-      cursor = pkgs.callPackage ./pkgs/cursor.nix {};
-    in with pkgs;
-    [
+}: {
+  environment.systemPackages = let
+    cursor = pkgs.callPackage ./pkgs/cursor.nix {};
+  in
+    with pkgs; [
       alacritty
       android-tools
       bitwarden-desktop
@@ -60,8 +59,8 @@
       #server
       #plex
     ];
-    #services.plex.enable = true;
-    #services.hypridle.enable = true;
+  #services.plex.enable = true;
+  #services.hypridle.enable = true;
 
   fonts = {
     packages = with pkgs; [
@@ -69,7 +68,7 @@
       noto-fonts-cjk
       font-awesome
       symbola
-      powerline      
+      powerline
       material-icons
     ];
   };

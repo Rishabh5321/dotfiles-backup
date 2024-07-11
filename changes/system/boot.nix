@@ -1,6 +1,9 @@
-{ pkgs, config, ... }:
 {
-boot = {
+  pkgs,
+  config,
+  ...
+}: {
+  boot = {
     # Kernel
     kernelPackages = pkgs.linuxPackages_latest;
     # This is for OBS Virtual Cam Support
@@ -12,7 +15,7 @@ boot = {
     };
     # Bootloader.
     loader.grub.enable = true;
-    loader.grub.devices = [ "nodev" ];
+    loader.grub.devices = ["nodev"];
     loader.grub.efiInstallAsRemovable = true;
     loader.grub.efiSupport = true;
     loader.grub.useOSProber = true;
@@ -33,9 +36,9 @@ boot = {
     plymouth.enable = true;
   };
 
-    stylix.targets.grub.enable = false;
-  
-    boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
+  stylix.targets.grub.enable = false;
+
+  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
     pname = "distro-grub-themes";
     version = "3.1";
     src = pkgs.fetchFromGitHub {
@@ -44,6 +47,6 @@ boot = {
       rev = "v3.1";
       hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
     };
-   installPhase = "cp -r customize/nixos $out";
- };
+    installPhase = "cp -r customize/nixos $out";
+  };
 }

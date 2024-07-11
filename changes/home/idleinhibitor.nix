@@ -2,8 +2,7 @@
   inputs,
   pkgs,
   ...
-}: 
-{
+}: {
   services.wayland-pipewire-idle-inhibit = {
     enable = true;
     package = pkgs.wayland-pipewire-idle-inhibit;

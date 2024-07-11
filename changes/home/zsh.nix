@@ -1,5 +1,12 @@
-{ hostname, config, pkgs, host, username, wallpaper, ...}: 
 {
+  hostname,
+  config,
+  pkgs,
+  host,
+  username,
+  wallpaper,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -7,7 +14,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
       theme = "agnoster";
     };
     initExtraFirst = ''
@@ -19,7 +26,7 @@
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
-      
+
       # Utils
       c = "clear";
       cd = "z";
@@ -45,7 +52,7 @@
       #nix-flake-update = "sudo nix flake update ~/dotfiles#";
       wallswitch = "swww img /home/${username}/Pictures/Wallpapers/${wallpaper}";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
-      
+
       # python
       piv = "python -m venv .venv";
       psv = "source .venv/bin/activate";

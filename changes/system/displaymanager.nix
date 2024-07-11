@@ -1,6 +1,11 @@
-{ pkgs, config, lib, wallpaper, username, ... }:
-
 {
+  pkgs,
+  config,
+  lib,
+  wallpaper,
+  username,
+  ...
+}: {
   services.displayManager = {
     enable = true;
     sddm = {
@@ -39,13 +44,12 @@
   services.displayManager.defaultSession = "hyprland";
   services.libinput.enable = true;
 
-  environment.systemPackages =
-let
+  environment.systemPackages = let
     sugar = pkgs.callPackage ./pkgs/sddm-sugar-dark.nix {};
     tokyo-night = pkgs.libsForQt5.callPackage ./pkgs/sddm-tokyo-night.nix {};
     firewatch-dark = pkgs.callPackage ./pkgs/sddm-firewatch.nix {};
     astronaut = pkgs.callPackage ./pkgs/sddm-astronaut-theme.nix {};
-in [ 
+  in [
     sugar.sddm-sugar-dark # Name: sugar-dark
     tokyo-night # Name: tokyo-night-sddm
     firewatch-dark.sddm-firewatch # Name sddm-firewatch

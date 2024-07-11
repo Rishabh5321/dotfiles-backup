@@ -1,8 +1,9 @@
-{ config, pkgs, username ,... }:
-
-
 {
-
+  config,
+  pkgs,
+  username,
+  ...
+}: {
   # Better scheduling for CPU cycles - thanks System76!!!
   services.system76-scheduler.settings.cfsProfiles.enable = true;
 
@@ -29,15 +30,13 @@
   services.upower.enable = true;
 
   systemd.sleep.extraConfig = ''
-  AllowSuspend=no
-  AllowHibernation=no
-  AllowHybridSleep=no
-  AllowSuspendThenHibernate=no
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
   '';
-
 
   services.logind.lidSwitch = "suspend";
 
   services.logind.lidSwitchDocked = "ignore";
-
 }

@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -10,5 +13,4 @@
     gnome.gnome-tweaks
     gnome.gnome-shell-extensions
   ];
-
 }

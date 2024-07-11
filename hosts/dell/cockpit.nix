@@ -7,9 +7,8 @@
   wallpaper,
   inputs,
   ...
-}:
-{
-  environment.systemPackages = [      
+}: {
+  environment.systemPackages = [
     pkgs.cockpit
   ];
 
@@ -23,4 +22,4 @@
       };
     };
   };
- }
+}

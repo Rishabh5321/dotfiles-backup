@@ -6,13 +6,13 @@
   username,
   options,
   ...
-}:
-{
-    environment.systemPackages = let
-    in with pkgs-unstable;
-    [
+}: {
+  environment.systemPackages = let
+  in
+    with pkgs-unstable; [
       heroic
       inputs.nix-software-center.packages.${system}.nix-software-center
+      inputs.alejandra.defaultPackage.${system}
       kdeconnect
       lutris
       protonup-qt
@@ -20,6 +20,6 @@
       vscode
       #plex
     ];
-    #services.plex.enable = true;
-    #services.hypridle.enable = true;
+  #services.plex.enable = true;
+  #services.hypridle.enable = true;
 }
