@@ -20,8 +20,7 @@
     initExtraFirst = ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
-      pfetch
-      #fastfetch
+      fastfetch
       #exec Hyprland
     '';
     shellAliases = {
