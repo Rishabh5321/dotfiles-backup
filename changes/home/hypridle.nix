@@ -26,6 +26,7 @@
         {
           timeout = 120;
           on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "notify-send 'Hypridle' 'Welcome to Desktop'";
         }
       ];
     };
