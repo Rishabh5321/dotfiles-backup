@@ -56,7 +56,7 @@ fi
 echo "-----"
 
 echo "Cloning & Entering dotfiles Repository"
-git clone https://gitlab.com/Rishabh5321/dotfiles
+git clone https://github.com/Rishabh5321/dotfiles
 cd dotfiles || exit
 mkdir hosts/"$hostName"
 cp hosts/default/*.nix hosts/"$hostName"
