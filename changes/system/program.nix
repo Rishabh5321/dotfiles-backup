@@ -86,7 +86,7 @@
           #  xwayland.enable = true;
           #};
           dconf.enable = true;
-          seahorse.enable = true;
+          #seahorse.enable = false;
           fuse.userAllowOther = true;
           mtr.enable = true;
           gnupg.agent = {
@@ -180,7 +180,7 @@
       xwayland.enable = true;
     };
     dconf.enable = true;
-    seahorse.enable = true;
+    #seahorse.enable = true;
     fuse.userAllowOther = true;
     mtr.enable = true;
     gnupg.agent = {

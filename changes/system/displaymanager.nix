@@ -6,10 +6,11 @@
   username,
   ...
 }: {
+/*
   services.displayManager = {
     enable = true;
     sddm = {
-      enable = true;
+      enable = false;
       wayland = {
         enable = true;
       };
@@ -25,25 +26,24 @@
           HaveFormBackground = false;
           PartialBlur = true;
           HourFormat = "h:m:s ap";
-          MainColor = "#${config.stylix.base16Scheme.base03}";
+          #MainColor = "#${config.stylix.base16Scheme.base03}";
           AccentColor = "#${config.stylix.base16Scheme.base04}";
-          BackgroundColor = "#${config.stylix.base16Scheme.base03}";
+          #BackgroundColor = "#${config.stylix.base16Scheme.base03}";
           # ...
         };
       };
-      settings = {
-        Autologin = {
-          Session = "hyprland";
-          User = "${username}";
-        };
-      };
+      #settings = {
+      #  Autologin = {
+      #    Session = "hyprland";
+      #    User = "${username}";
+      #  };
+      #};
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
   };
-  services.displayManager.defaultSession = "hyprland";
-  services.libinput.enable = true;
 
+  services.libinput.enable = true;
   environment.systemPackages = let
     sugar = pkgs.callPackage ./pkgs/sddm-sugar-dark.nix {};
     tokyo-night = pkgs.libsForQt5.callPackage ./pkgs/sddm-tokyo-night.nix {};
@@ -56,4 +56,17 @@
     astronaut #name astronaut
     pkgs.libsForQt5.qt5.qtgraphicaleffects
   ];
+*/
+    services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+        enable = true;
+        autoSuspend = if config.networking.hostName == "dell" then false else true;
+        #greeters.gtk = {
+        #  enable = true;
+        #};
+    };
+    };
+    services.displayManager.defaultSession = "hyprland";
+
 }

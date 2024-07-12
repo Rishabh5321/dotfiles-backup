@@ -26,6 +26,7 @@
       firefox
       floorp
       gh
+      hyprlock
       gnome.gnome-disk-utility
       gnome.gnome-system-monitor
       gnome.nautilus
@@ -39,6 +40,7 @@
       pfetch-rs
       peaclock
       plex-media-player
+      polkit_gnome
       #prismlauncher
       qbittorrent
       ranger

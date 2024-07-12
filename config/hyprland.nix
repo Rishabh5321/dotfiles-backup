@@ -40,6 +40,7 @@ in
       in
         concatStrings [
           ''
+
             env = NIXOS_OZONE_WL, 1
             env = NIXPKGS_ALLOW_UNFREE, 1
             env = XDG_CURRENT_DESKTOP, Hyprland
@@ -59,8 +60,8 @@ in
             exec-once = killall -q waybar;sleep .5 && waybar
             exec-once = killall -q swaync;sleep .5 && swaync
             exec-once = nm-applet --indicator
-            exec-once = lxqt-policykit-agent
-            exec-once = hyprlock --immediate
+            #exec-once = lxqt-policykit-agent
+            #exec-once = hyprlock --immediate
             exec-once = wl-paste --type text --watch cliphist store #Stores only text data
             exec-once = wl-paste --type image --watch cliphist store #Stores only image data
             exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${wallpaper}
@@ -97,6 +98,7 @@ in
             windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
             windowrule = animation fade,^(wlogout)$
             windowrule = fullscreen, ^(wlogout)$
+            windowrulev2 = dimaround, class:^(polkit-gnome-authentication-agent-1)$
             gestures {
               workspace_swipe = true
             }
