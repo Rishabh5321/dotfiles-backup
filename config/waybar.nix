@@ -13,9 +13,9 @@ in with lib; {
       layer = "top";
       position = "top";
       output = "eDP-1";
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "hyprland/window" "pulseaudio" "cpu" "memory" "power-profiles-daemon" ];
-      modules-right = [ "custom/hyprbindings" "custom/exit" "idle_inhibitor" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
+      modules-center = [ "hyprland/workspaces" ];
+      modules-left = [ "custom/startmenu" "hyprland/window" "pulseaudio" ];
+      modules-right = [ "backlight" "custom/exit" "idle_inhibitor" "custom/notification" "battery" "clock" "tray" ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -93,7 +93,7 @@ in with lib; {
       };
       "custom/startmenu" = {
         tooltip = false;
-        format = " ";
+        format = "Menu";
         # exec = "rofi -show drun";
         on-click = "sleep 0.1 && rofi-launcher";
       };
@@ -102,8 +102,23 @@ in with lib; {
         format = " Bindings";
         on-click = "sleep 0.1 && list-hypr-bindings";
       };
+      backlight = {
+        device = "intel_backlight";
+        format = "{icon} {}%";
+        format-icons = [
+          ""
+          ""
+          ""
+          "󰃝"
+          "󰃞"
+          "󰃟"
+          "󰃠"
+        ];
+        on-scroll-up = "brightnessctl set 5%+";
+        on-scroll-down = "brightnessctl set 5%-";
+      };
       "idle_inhibitor" = {
-        format = "{icon}";
+        format = " {icon} ";
         format-icons = {
             activated = "";
             deactivated = "";
@@ -343,7 +358,7 @@ in with lib; {
 	  border-radius: 10px;
 	''}
       }
-      #clock {
+      #clock, #backlight {
     	color: #${palette.base0B};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
@@ -553,7 +568,7 @@ in with lib; {
 	  border-radius: 10px;
 	''}
       }
-      #custom-themeselector {
+      #custom-themeselector,  #idle_inhibitor {
     	color: #${palette.base0D};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
@@ -589,25 +604,6 @@ in with lib; {
 	  margin: 4px;
 	  padding: 2px 10px;
 	  border-radius: 10px;
-	''}
-      }
-      #idle_inhibitor {
-    	color: #${palette.base09};
-	${if slickbar == true then ''
-	  background: #${palette.base00};
-	  border-radius: 0px;
-	  margin: 5px 0px;
-	  padding: 2px 14px;
-	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 0px;
-	  padding: 0px 14px;
-	  border-radius: 0px;
-	'' else ''
-	  background: #${palette.base01};
-	  margin: 4px 0px;
-	  padding: 2px 14px;
-	  border-radius: 0px;
 	''}
       }
       #custom-exit {
