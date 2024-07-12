@@ -16,6 +16,7 @@
       bitwarden-desktop
       bottles
       brave
+      cava
       cursor
       cliphist
       distrobox
@@ -51,8 +52,9 @@
       uwufetch
       vlc
       wayland-pipewire-idle-inhibit
-      wezterm
+      #wezterm
       xfce.xfce4-pulseaudio-plugin
+      zed-editor
       zinit
       zsh
       zsh-powerlevel10k

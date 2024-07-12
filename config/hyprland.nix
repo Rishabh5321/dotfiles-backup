@@ -143,7 +143,7 @@ in
             bind = ${modifier}SHIFT,Return,exec,rofi-launcher
             bind = ${modifier},V,exec,cliphist list | rofi -dmenu | cliphist decode | wl-copy
             bind = ${modifier}SHIFT,W,exec,web-search
-            bind = ${modifier}ALT,W,exec,wallsetter
+            bind = ${modifier}ALT,W,exec,wallSelector
             bind = ${modifier}SHIFT,N,exec,swaync-client -rs
             bind = ${modifier},W,exec,${browser}
             bind = ${modifier},E,exec,emopicker9000

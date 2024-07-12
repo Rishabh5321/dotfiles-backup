@@ -17,4 +17,6 @@
   host = "dell";
 
   alacritty = true;
+
+  wallpaperDir = "~/Pictures/Wallpapers";
 }
