@@ -26,7 +26,6 @@
       firefox
       floorp
       gh
-      github-desktop
       gnome.gnome-disk-utility
       gnome.gnome-system-monitor
       gnome.nautilus
@@ -54,7 +53,6 @@
       wayland-pipewire-idle-inhibit
       #wezterm
       xfce.xfce4-pulseaudio-plugin
-      zed-editor
       zinit
       zsh
       zsh-powerlevel10k

@@ -94,9 +94,10 @@ in
             windowrule = float, zoom
             windowrulev2 = stayfocused, title:^()$,class:^(steam)$
             windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
+            windowrule = animation fade,^(wlogout)$
+            windowrule = fullscreen, ^(wlogout)$
             gestures {
               workspace_swipe = true
-              workspace_swipe_fingers = 3
             }
             misc {
               initial_workspace_tracking = 0
@@ -114,7 +115,7 @@ in
               animation = windowsOut, 1, 5, winOut, slide
               animation = windowsMove, 1, 5, wind, slide
               animation = border, 1, 1, liner
-              animation = fade, 1, 10, default
+              animation = fade, 1, 4, default
               animation = workspaces, 1, 5, wind
             }
             decoration {
@@ -146,6 +147,7 @@ in
             bind = ${modifier}ALT,W,exec,wallSelector
             bind = ${modifier}SHIFT,N,exec,swaync-client -rs
             bind = ${modifier},W,exec,${browser}
+            bind = ${modifier},L,exec,wlogout
             bind = ${modifier},E,exec,emopicker9000
             bind = ${modifier},S,exec,screenshootin
             bind = ${modifier},D,exec,discord
@@ -172,7 +174,6 @@ in
             bind = ${modifier},up,movefocus,u
             bind = ${modifier},down,movefocus,d
             bind = ${modifier},h,movefocus,l
-            bind = ${modifier},l,movefocus,r
             bind = ${modifier},k,movefocus,u
             bind = ${modifier},j,movefocus,d
             bind = ${modifier},1,workspace,1

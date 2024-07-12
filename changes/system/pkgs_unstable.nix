@@ -10,6 +10,7 @@
   environment.systemPackages = let
   in
     with pkgs-unstable; [
+      github-desktop
       heroic
       inputs.nix-software-center.packages.${system}.nix-software-center
       inputs.alejandra.defaultPackage.${system}
@@ -17,6 +18,7 @@
       lutris
       protonup-qt
       rquickshare
+      zed-editor
       vscode
       #plex
     ];
