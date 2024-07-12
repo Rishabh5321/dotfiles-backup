@@ -1,3 +1,6 @@
+let
+waybarStyle = "default"; # simplebar, slickbar, or default
+in
 {
   # Git Configuration ( For Pulling Software Repos )
   gitUsername = "Rishabh5321";
@@ -19,4 +22,8 @@
   alacritty = true;
 
   wallpaperDir = "~/Pictures/Wallpapers";
+
+  slickbar = if waybarStyle == "slickbar" then true else false;
+  simplebar = if waybarStyle == "simplebar" then true else false;
+  bar-number = true;
 }
