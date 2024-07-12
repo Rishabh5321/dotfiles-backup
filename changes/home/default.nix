@@ -8,6 +8,7 @@
   ...
 }: {
   imports = [
+    ./alacritty.nix
     ./cava.nix
     ./chromium.nix
     #./conky.nix

@@ -11,8 +11,10 @@
 
   # Program Options
   browser = "floorp"; # Set Default Browser (google-chrome-stable for google-chrome)
-  terminal = "kitty"; # Set Default System Terminal
+  terminal = "alacritty"; # Set Default System Terminal
 
   theShell = "zsh";
   host = "dell";
+
+  alacritty = true;
 }
