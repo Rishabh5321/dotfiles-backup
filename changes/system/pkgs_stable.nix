@@ -44,6 +44,7 @@
       #prismlauncher
       qbittorrent
       ranger
+      spicetify-cli
       spotdl
       speedtest-cli
       #spicetify-cli

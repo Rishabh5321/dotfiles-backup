@@ -5,23 +5,24 @@
   config,
   spicetify-nix,
   ...
-}: let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
-  palette = config.stylix.base16Scheme;
-in {
-  # allow spotify to be installed if you don't have unfree enabled already
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "spotify"
-    ];
-
-  # import the flake's module for your system
-  imports = [spicetify-nix.homeManagerModule];
-
-  # configure spicetify :)
-  programs.spicetify = {
-    enable = true;
-    theme = spicePkgs.themes.Dribbblish;
+}:
+{
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+  ];  
+  programs.spicetify =
+   let
+     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+     palette = config.stylix.base16Scheme;
+   in
+   {
+   enable = true;
+   enabledExtensions = with spicePkgs.extensions; [
+     adblock
+     hidePodcasts
+     shuffle # shuffle+ (special characters are sanitized out of extension names)
+   ];
+   theme = spicePkgs.themes.dribbblish;
     colorScheme = "custom";
     customColorScheme = {
       text = "${palette.base0B}";
@@ -50,11 +51,5 @@ in {
       radio-btn-active = "${palette.base04}";
     };
 
-    enabledExtensions = with spicePkgs.extensions; [
-      fullAppDisplay
-      shuffle # shuffle+ (special characters are sanitized out of ext names)
-      hidePodcasts
-      inputs.spicetify-nix.packages.${pkgs.system}.default.extensions.adblock
-    ];
   };
 }
