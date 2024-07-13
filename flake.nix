@@ -19,7 +19,7 @@
     };
     # This is required for plugin support.
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+   # hyprland.inputs.nixpkgs.follows = "nixpkgs";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";

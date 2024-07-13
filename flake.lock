@@ -332,18 +332,16 @@
         "hyprlang": "hyprlang",
         "hyprutils": "hyprutils",
         "hyprwayland-scanner": "hyprwayland-scanner",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs",
         "systems": "systems",
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1720818319,
-        "narHash": "sha256-HCjjU259K+7fD/l12u8CkBM9VjQqXleEGpmbdZ0r3oY=",
+        "lastModified": 1720868033,
+        "narHash": "sha256-4ZTJKKQAN4JheNTQGu9LeU5LIgwwD02LiW+ygf8zL4U=",
         "ref": "refs/heads/main",
-        "rev": "f85c6416c6f5e56c75178ecb24c11e346069197d",
-        "revCount": 4918,
+        "rev": "a770a88e0962f37c0b6f36f1876cbf27db4cf3c9",
+        "revCount": 4922,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -538,16 +536,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1720691131,
-        "narHash": "sha256-CWT+KN8aTPyMIx8P303gsVxUnkinIz0a/Cmasz1jyIM=",
+        "lastModified": 1720542800,
+        "narHash": "sha256-ZgnNHuKV6h2+fQ5LuqnUaqZey1Lqqt5dTUAiAnqH0QQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a046c1202e11b62cbede5385ba64908feb7bfac4",
+        "rev": "feb2849fdeb70028c70d73b848214b00d324a497",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-24.05",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -568,6 +566,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1720691131,
+        "narHash": "sha256-CWT+KN8aTPyMIx8P303gsVxUnkinIz0a/Cmasz1jyIM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a046c1202e11b62cbede5385ba64908feb7bfac4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "alejandra": "alejandra",
@@ -576,7 +590,7 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "nix-software-center": "nix-software-center",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sddm-sugar-candy-nix": "sddm-sugar-candy-nix",
         "spicetify-nix": "spicetify-nix",
