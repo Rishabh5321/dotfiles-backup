@@ -1,10 +1,11 @@
 {
-config,
-pkgs,
-inputs,
-...
-}:{
-   programs.wezterm = {
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  programs.wezterm = {
     enable = true;
-   };
+  };
 }
