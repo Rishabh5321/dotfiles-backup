@@ -31,4 +31,6 @@ in {
     then true
     else false;
   bar-number = true;
+
+  wezterm = true;
 }

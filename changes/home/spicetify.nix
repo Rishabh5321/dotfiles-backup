@@ -22,7 +22,7 @@
      hidePodcasts
      shuffle # shuffle+ (special characters are sanitized out of extension names)
    ];
-   theme = spicePkgs.themes.dribbblish;
+   theme = spicePkgs.themes.ziro;
     colorScheme = "custom";
     customColorScheme = {
       text = "${palette.base0B}";

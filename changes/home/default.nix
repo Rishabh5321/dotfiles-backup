@@ -23,7 +23,9 @@
     ./kitty.nix
     ./packages.nix
     ./spicetify.nix
+    ./starship.nix
     ./stylix.nix
+    ./wezterm.nix
     ./zsh.nix
   ];
 }
