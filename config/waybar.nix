@@ -19,8 +19,8 @@ in
           position = "top";
           output = "eDP-1";
           modules-center = ["hyprland/workspaces"];
-          modules-left = ["custom/startmenu" "hyprland/window" "pulseaudio"];
-          modules-right = ["backlight" "custom/exit" "idle_inhibitor" "custom/notification" "battery" "clock" "tray"];
+          modules-left = ["custom/startmenu" "hyprland/window" "network#speed"];
+          modules-right = ["backlight" "pulseaudio" "custom/exit" "idle_inhibitor" "custom/notification" "battery" "clock" "tray"];
 
           "hyprland/workspaces" = {
             format =
@@ -46,7 +46,8 @@ in
             tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
           };
           "hyprland/window" = {
-            max-length = 25;
+            min-length = 30;
+            max-length = 30;
             separate-outputs = false;
             rewrite = {
               "" = " 🙈 No Windows? ";
@@ -75,6 +76,25 @@ in
           };
           "tray" = {
             spacing = 12;
+          };
+          "network#speed" = {
+            interval = 1;
+            format = "{ifname}";
+            format-wifi = "{icon}   {bandwidthUpBits}   {bandwidthDownBits}";
+            format-ethernet = "󰌘   {bandwidthUpBits}   {bandwidthDownBits}";
+            format-disconnected = "󰌙";
+            tooltip-format = "{ipaddr}";
+            format-linked = "󰈁 {ifname} (No IP)";
+            tooltip-format-wifi = "{essid} {icon} {signalStrength}%";
+            tooltip-format-ethernet = "{ifname} 󰌘";
+            tooltip-format-disconnected = "󰌙 Disconnected";
+            format-icons = [
+              "󰤯"
+              "󰤟"
+              "󰤢"
+              "󰤥"
+              "󰤨"
+            ];
           };
           "pulseaudio" = {
             format = "{icon} {volume}% {format_source}";
@@ -413,7 +433,7 @@ in
             ''
           }
                }
-               #clock, #backlight {
+               #clock, #backlight ,#pulseaudio {
              	color: #${palette.base0B};
           ${
             if slickbar == true
@@ -564,7 +584,7 @@ in
           }
                }
 
-               #network {
+               #network, #network#speed {
              	color: #${palette.base09};
           ${
             if slickbar == true
@@ -639,7 +659,7 @@ in
             ''
           }
                }
-               #pulseaudio {
+               #pulseaudio1 {
              	color: #${palette.base0D};
           ${
             if slickbar == true
