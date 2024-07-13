@@ -17,7 +17,6 @@ with lib;
   services.kdeconnect = {
     package = pkgs.kdePackages.kdeconnect-kde;
     enable = true;
-    indicator = true;
   };
   wayland.windowManager.hyprland = {
     enable = true;
