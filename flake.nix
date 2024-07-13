@@ -8,6 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     #firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
     stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,9 +19,11 @@
     };
     # This is required for plugin support.
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     alejandra.url = "github:kamadorueda/alejandra";
@@ -32,6 +35,7 @@
     };
 
     nix-software-center.url = "github:snowfallorg/nix-software-center";
+    nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
