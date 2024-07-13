@@ -35,7 +35,9 @@
       gnome.nautilus
       google-chrome
       jellyfin-media-player
+      inputs.wezterm.packages.${pkgs.system}.default
       kodi-wayland
+      lazycli
       lazydocker
       libreoffice
       micro
@@ -57,7 +59,6 @@
       uwufetch
       vlc
       wayland-pipewire-idle-inhibit
-      #wezterm
       xfce.xfce4-pulseaudio-plugin
       zinit
       zsh
