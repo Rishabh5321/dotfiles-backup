@@ -52,7 +52,7 @@
       system = "x86_64-linux";
       host = "dell";
       username = "rishabh";
-      wallpaper = "wall8.jpg";
+      wallpaper = "wall72.jpg";
       pkgs-unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config = {
