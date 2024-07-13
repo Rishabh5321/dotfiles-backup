@@ -14,11 +14,11 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git"];
-      theme = "agnoster";
-    };
+    #oh-my-zsh = {
+    #  enable = true;
+    #  plugins = ["git"];
+    #  theme = "agnoster";
+    #};
     initExtraFirst = ''
       HISTFILE=~/.histfile
       HISTSIZE=1000
