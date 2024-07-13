@@ -16,4 +16,15 @@
 #    gnome.gnome-shell-extensions
 #  ];
 #
+/*
+services.xserver = {
+  enable = true;
+  libinput.enable = true;
+  displayManager.lightdm.enable = true;
+  desktopManager.xfce.enable = true;
+  displayManager.defaultSession = "hyprland";
+  windowManager.i3 = {
+     enable = true;
+    };
+};*/
 }

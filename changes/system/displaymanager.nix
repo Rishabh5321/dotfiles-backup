@@ -6,11 +6,11 @@
   username,
   ...
 }: {
-/*
+
   services.displayManager = {
     enable = true;
     sddm = {
-      enable = false;
+      enable = true;
       wayland = {
         enable = true;
       };
@@ -32,12 +32,12 @@
           # ...
         };
       };
-      #settings = {
-      #  Autologin = {
-      #    Session = "hyprland";
-      #    User = "${username}";
-      #  };
-      #};
+      settings = {
+        Autologin = {
+          Session = "hyprland";
+          User = "${username}";
+        };
+      };
       #theme = "${import ./pkgs/sddm-astronaut-theme.nix { inherit pkgs; }}";
       autoNumlock = true;
     };
@@ -57,7 +57,7 @@
     pkgs.libsForQt5.qt5.qtgraphicaleffects
   ];
 
-services = {
+/*services = {
    xserver = {
      displayManager.defaultSession = "hyprland";
      displayManager.lightdm = {
