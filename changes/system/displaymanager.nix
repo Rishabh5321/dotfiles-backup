@@ -6,7 +6,6 @@
   username,
   ...
 }: {
-
   services.displayManager = {
     enable = true;
     sddm = {
@@ -57,12 +56,14 @@
     pkgs.libsForQt5.qt5.qtgraphicaleffects
   ];
 
-/*services = {
-   xserver = {
-     displayManager.defaultSession = "hyprland";
-     displayManager.lightdm = {
-       enable = true;
-     };
-    };
-};*/
+  /*
+    services = {
+     xserver = {
+       displayManager.defaultSession = "hyprland";
+       displayManager.lightdm = {
+         enable = true;
+       };
+      };
+  };
+  */
 }

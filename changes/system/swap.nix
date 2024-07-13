@@ -1,6 +1,6 @@
 {...}: {
   zramSwap = {
     enable = true;
-    memoryMax = 16000000000;   
+    memoryMax = 16000000000;
   };
 }

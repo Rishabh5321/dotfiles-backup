@@ -192,7 +192,6 @@
   # hardware.logitech.wireless.enable = true;
   # hardware.logitech.wireless.enableGraphical = true;
 
-
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
   virtualisation.docker = {
