@@ -3,7 +3,8 @@
   wallpaper,
   username,
   ...
-}: let
+}:
+let
   color0 = "rgb(${config.stylix.base16Scheme.base00})";
   color1 = "rgb(${config.stylix.base16Scheme.base01})";
   color2 = "rgb(${config.stylix.base16Scheme.base02})";
@@ -20,7 +21,8 @@
   color13 = "rgb(${config.stylix.base16Scheme.base0D})";
   color14 = "rgb(${config.stylix.base16Scheme.base0E})";
   color15 = "rgb(${config.stylix.base16Scheme.base0F})";
-in {
+in
+{
   programs.hyprlock = {
     enable = true;
 
@@ -39,7 +41,7 @@ in {
           path = "/home/${username}/Pictures/Wallpapers/${wallpaper}";
           blur_passes = 3;
           blur_size = 8;
-          noise = 0.0117;
+          noise = 1.17e-2;
           contrast = 0.8916;
           brightness = 0.8172;
           vibrancy = 0.1696;

@@ -5,10 +5,12 @@
   wallpaper,
   username,
   ...
-}: let
+}:
+let
   # https://github.com/flameshot-org/flameshot/issues/2848
   flameshot-gui = pkgs.writeShellScriptBin "flameshot-gui" "${pkgs.flameshot}/bin/flameshot gui --raw | wl-copy";
-in {
+in
+{
   home.file.".config/gtk-3.0/bookmarks".text = ''
     file:///home/nelson/source/personal
     file:///home/nelson/source
@@ -75,13 +77,13 @@ in {
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      toggle-message-tray = ["<Super>m"]; # Free up <Super>m
-      close = ["<Super>q"];
-      search = ["<Super><Shift>Enter"]; # change search keybind to super shift enter
-      toggle-fullscreen = ["<Super>f"];
-      switch-windows = ["<Alt>Tab"];
-      switch-to-workspace-left = ["<Control><Super>Left"];
-      switch-to-workspace-right = ["<Control><Super>Right"];
+      toggle-message-tray = [ "<Super>m" ]; # Free up <Super>m
+      close = [ "<Super>q" ];
+      search = [ "<Super><Shift>Enter" ]; # change search keybind to super shift enter
+      toggle-fullscreen = [ "<Super>f" ];
+      switch-windows = [ "<Alt>Tab" ];
+      switch-to-workspace-left = [ "<Control><Super>Left" ];
+      switch-to-workspace-right = [ "<Control><Super>Right" ];
     };
 
     "org/gnome/mutter" = {
@@ -91,19 +93,19 @@ in {
     };
 
     "org/gnome/shell/keybindings" = {
-      show-screenshot-ui = []; # free up Print
-      toggle-message-tray = ["<Super>v"];
-      toggle-quick-settings = []; # free up super-s
+      show-screenshot-ui = [ ]; # free up Print
+      toggle-message-tray = [ "<Super>v" ];
+      toggle-quick-settings = [ ]; # free up super-s
     };
 
     # map the mappings
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      next = ["<Super>bracketright"];
-      play = ["<Super>backslash"];
-      previous = ["<Super>bracketleft"];
-      screenshot = []; # free up for flameshot
-      volume-down = ["<Shift><Super>braceleft"];
-      volume-up = ["<Shift><Super>braceright"];
+      next = [ "<Super>bracketright" ];
+      play = [ "<Super>backslash" ];
+      previous = [ "<Super>bracketleft" ];
+      screenshot = [ ]; # free up for flameshot
+      volume-down = [ "<Shift><Super>braceleft" ];
+      volume-up = [ "<Shift><Super>braceright" ];
 
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"

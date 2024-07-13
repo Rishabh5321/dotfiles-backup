@@ -6,7 +6,8 @@
   username,
   options,
   ...
-}: {
+}:
+{
   imports = [
     ./alacritty.nix
     ./cava.nix

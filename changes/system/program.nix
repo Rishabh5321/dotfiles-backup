@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   programs = {
     firefox.enable = false;
     starship = {

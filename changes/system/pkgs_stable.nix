@@ -6,11 +6,14 @@
   username,
   options,
   ...
-}: {
-  environment.systemPackages = let
-    cursor = pkgs.callPackage ./pkgs/cursor.nix {};
-  in
-    with pkgs; [
+}:
+{
+  environment.systemPackages =
+    let
+      cursor = pkgs.callPackage ./pkgs/cursor.nix { };
+    in
+    with pkgs;
+    [
       alacritty
       android-tools
       bitwarden-desktop

@@ -3,20 +3,21 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.gnome-shell = {
     enable = true;
     extensions = [
-      {package = pkgs.gnomeExtensions.appindicator;}
-      {package = pkgs.gnomeExtensions.caffeine;}
-      {package = pkgs.gnomeExtensions.clipboard-indicator;}
+      { package = pkgs.gnomeExtensions.appindicator; }
+      { package = pkgs.gnomeExtensions.caffeine; }
+      { package = pkgs.gnomeExtensions.clipboard-indicator; }
       #{ package = pkgs.gnomeExtensions.just-perfection; }
-      {package = pkgs.gnomeExtensions.gsconnect;}
-      {package = pkgs.gnomeExtensions.dash-to-dock;}
-      {package = pkgs.gnomeExtensions.alphabetical-app-grid;}
-      {package = pkgs.gnomeExtensions.blur-my-shell;}
-      {package = pkgs.gnomeExtensions.impatience;}
-      {package = pkgs.gnomeExtensions.system-monitor;}
+      { package = pkgs.gnomeExtensions.gsconnect; }
+      { package = pkgs.gnomeExtensions.dash-to-dock; }
+      { package = pkgs.gnomeExtensions.alphabetical-app-grid; }
+      { package = pkgs.gnomeExtensions.blur-my-shell; }
+      { package = pkgs.gnomeExtensions.impatience; }
+      { package = pkgs.gnomeExtensions.system-monitor; }
       #{ package = pkgs.gnomeExtensions.github-actions; }
       # "Play lofi music on your Gnome desktop with just a click!"
       #   https://github.com/eucaue/gnome-shell-extension-quick-lofi
@@ -33,10 +34,9 @@
     };
 
     "org.gnome.settings-daemon.plugins.power" = {
-    sleep-inactive-ac-timeout = 60;
-    sleep-inactive-battery-timeout = 60;
+      sleep-inactive-ac-timeout = 60;
+      sleep-inactive-battery-timeout = 60;
     };
-
 
     "org/gnome/shell/extensions/clipboard-indicator" = {
       cache-size = 10;
@@ -46,11 +46,11 @@
       strip-text = true;
       topbar-preview-size = 8;
 
-      clear-history = [];
-      next-entry = ["<Shift><Control>p"];
-      prev-entry = ["<Shift><Control>o"];
-      private-mode-binding = [];
-      toggle-menu = ["<Shift><Control>i"];
+      clear-history = [ ];
+      next-entry = [ "<Shift><Control>p" ];
+      prev-entry = [ "<Shift><Control>o" ];
+      private-mode-binding = [ ];
+      toggle-menu = [ "<Shift><Control>i" ];
     };
 
     "org/gnome/shell/extensions/quick-lofi" = {
@@ -97,8 +97,7 @@
       tray-pos = "right";
     };
 
-    "org/gnome/shell/extensions/git" = {
-    };
+    "org/gnome/shell/extensions/git" = { };
 
     "org/gnome/shell/extensions/caffeine" = {
       indicator-position = -1;
@@ -106,7 +105,7 @@
       screen-blank = "never";
       show-indicator = "only-active";
       show-notifications = false;
-      toggle-shortcut = ["<Super>c"];
+      toggle-shortcut = [ "<Super>c" ];
     };
 
     "org/gnome/shell/extensions/github-notifications" = {

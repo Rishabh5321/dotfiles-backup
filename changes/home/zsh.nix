@@ -6,7 +6,8 @@
   username,
   wallpaper,
   ...
-}: {
+}:
+{
   home.file.".config/starship.toml".source = ./assets/starship.toml;
   programs.zsh = {
     enable = true;
@@ -63,7 +64,7 @@
       dsize = "du -hs";
       findw = "grep -rl";
 
-      l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
+      l = "eza --icons  -a --group-directories-first -1"; # EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
       tree = "eza --icons --tree --group-directories-first";
 

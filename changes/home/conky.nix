@@ -1,14 +1,9 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
-  home.packages = [
-    pkgs.conky
-  ];
+  home.packages = [ pkgs.conky ];
   home.file = {
     ".config/autostart/conky.desktop".text = ''
       [Desktop Entry]

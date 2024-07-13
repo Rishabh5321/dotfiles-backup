@@ -5,7 +5,8 @@
   wallpaper,
   username,
   ...
-}: {
+}:
+{
   services.displayManager = {
     enable = true;
     sddm = {
@@ -43,27 +44,29 @@
   };
 
   services.libinput.enable = true;
-  environment.systemPackages = let
-    sugar = pkgs.callPackage ./pkgs/sddm-sugar-dark.nix {};
-    tokyo-night = pkgs.libsForQt5.callPackage ./pkgs/sddm-tokyo-night.nix {};
-    firewatch-dark = pkgs.callPackage ./pkgs/sddm-firewatch.nix {};
-    astronaut = pkgs.callPackage ./pkgs/sddm-astronaut-theme.nix {};
-  in [
-    sugar.sddm-sugar-dark # Name: sugar-dark
-    tokyo-night # Name: tokyo-night-sddm
-    firewatch-dark.sddm-firewatch # Name sddm-firewatch
-    astronaut #name astronaut
-    pkgs.libsForQt5.qt5.qtgraphicaleffects
-  ];
+  environment.systemPackages =
+    let
+      sugar = pkgs.callPackage ./pkgs/sddm-sugar-dark.nix { };
+      tokyo-night = pkgs.libsForQt5.callPackage ./pkgs/sddm-tokyo-night.nix { };
+      firewatch-dark = pkgs.callPackage ./pkgs/sddm-firewatch.nix { };
+      astronaut = pkgs.callPackage ./pkgs/sddm-astronaut-theme.nix { };
+    in
+    [
+      sugar.sddm-sugar-dark # Name: sugar-dark
+      tokyo-night # Name: tokyo-night-sddm
+      firewatch-dark.sddm-firewatch # Name sddm-firewatch
+      astronaut # name astronaut
+      pkgs.libsForQt5.qt5.qtgraphicaleffects
+    ];
 
   /*
-    services = {
-     xserver = {
-       displayManager.defaultSession = "hyprland";
-       displayManager.lightdm = {
-         enable = true;
-       };
-      };
-  };
+      services = {
+       xserver = {
+         displayManager.defaultSession = "hyprland";
+         displayManager.lightdm = {
+           enable = true;
+         };
+        };
+    };
   */
 }

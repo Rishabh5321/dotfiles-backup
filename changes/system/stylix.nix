@@ -4,7 +4,8 @@
   host,
   wallpaper,
   ...
-}: {
+}:
+{
   stylix = {
     enable = true;
     image = ../../config/wallpapers/${wallpaper};
@@ -33,7 +34,7 @@
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {

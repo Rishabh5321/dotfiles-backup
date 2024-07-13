@@ -7,7 +7,8 @@
   wallpaper,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware.nix
     #./users.nix
@@ -37,7 +38,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.hostName = "dell";
-  networking.timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
+  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -177,15 +178,15 @@
     nfs.server.enable = false;
   };
   systemd.services.flatpak-repo = {
-    path = [pkgs.flatpak];
+    path = [ pkgs.flatpak ];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
   hardware.sane = {
     enable = true;
-    extraBackends = [pkgs.sane-airscan];
-    disabledDefaultBackends = ["escl"];
+    extraBackends = [ pkgs.sane-airscan ];
+    disabledDefaultBackends = [ "escl" ];
   };
 
   # Extra Logitech Support

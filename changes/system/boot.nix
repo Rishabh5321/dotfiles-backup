@@ -1,8 +1,5 @@
+{ pkgs, config, ... }:
 {
-  pkgs,
-  config,
-  ...
-}: {
   boot = {
     # Kernel
     kernelPackages = pkgs.linuxPackages_latest;
@@ -15,7 +12,7 @@
     };
     # Bootloader.
     loader.grub.enable = true;
-    loader.grub.devices = ["nodev"];
+    loader.grub.devices = [ "nodev" ];
     loader.grub.efiInstallAsRemovable = true;
     loader.grub.efiSupport = true;
     loader.grub.useOSProber = true;

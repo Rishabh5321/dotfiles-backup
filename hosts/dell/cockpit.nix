@@ -7,10 +7,9 @@
   wallpaper,
   inputs,
   ...
-}: {
-  environment.systemPackages = [
-    pkgs.cockpit
-  ];
+}:
+{
+  environment.systemPackages = [ pkgs.cockpit ];
 
   # Cockpit
   services.cockpit = {

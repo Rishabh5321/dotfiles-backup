@@ -6,7 +6,8 @@
   username,
   options,
   ...
-}: {
+}:
+{
   # Bluetooth Support
   hardware.bluetooth.enable = true;
   #hardware.bluetooth.powerOnBoot = true;

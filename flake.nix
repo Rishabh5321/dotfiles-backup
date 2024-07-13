@@ -34,100 +34,98 @@
     nix-software-center.url = "github:snowfallorg/nix-software-center";
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    nixpkgs-unstable,
-    sddm-sugar-candy-nix,
-    alejandra,
-    spicetify-nix,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    host = "dell";
-    username = "rishabh";
-    wallpaper = "wall8.jpg";
-    pkgs-unstable = import nixpkgs-unstable {
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nixpkgs-unstable,
+      sddm-sugar-candy-nix,
+      alejandra,
+      spicetify-nix,
+      ...
+    }@inputs:
+    let
       system = "x86_64-linux";
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = _: true;
-      };
-    };
-  in {
-    nixosConfigurations = {
-      "redmi" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit system;
-          inherit inputs;
-          inherit username;
-          inherit host;
-          inherit wallpaper;
-          inherit pkgs-unstable;
+      host = "dell";
+      username = "rishabh";
+      wallpaper = "wall8.jpg";
+      pkgs-unstable = import nixpkgs-unstable {
+        system = "x86_64-linux";
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = _: true;
         };
-        modules = [
-          ./hosts/redmi/config.nix
-          inputs.stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          sddm-sugar-candy-nix.nixosModules.default
-          {
-            nixpkgs = {
-              overlays = [
-                sddm-sugar-candy-nix.overlays.default
-              ];
-            };
-            home-manager.extraSpecialArgs = {
-              inherit username;
-              inherit inputs;
-              inherit host;
-              inherit wallpaper;
-              inherit spicetify-nix;
-              inherit pkgs-unstable;
-            };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "rebuild";
-            home-manager.users.${username} = import ./hosts/redmi/home.nix;
-          }
-        ];
       };
-      "dell" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit system;
-          inherit inputs;
-          inherit username;
-          inherit host;
-          inherit wallpaper;
-          inherit pkgs-unstable;
+    in
+    {
+      nixosConfigurations = {
+        "redmi" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit username;
+            inherit host;
+            inherit wallpaper;
+            inherit pkgs-unstable;
+          };
+          modules = [
+            ./hosts/redmi/config.nix
+            inputs.stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            sddm-sugar-candy-nix.nixosModules.default
+            {
+              nixpkgs = {
+                overlays = [ sddm-sugar-candy-nix.overlays.default ];
+              };
+              home-manager.extraSpecialArgs = {
+                inherit username;
+                inherit inputs;
+                inherit host;
+                inherit wallpaper;
+                inherit spicetify-nix;
+                inherit pkgs-unstable;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "rebuild";
+              home-manager.users.${username} = import ./hosts/redmi/home.nix;
+            }
+          ];
         };
-        modules = [
-          ./hosts/dell/config.nix
-          inputs.stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          sddm-sugar-candy-nix.nixosModules.default
-          {
-            nixpkgs = {
-              overlays = [
-                sddm-sugar-candy-nix.overlays.default
-              ];
-            };
-            home-manager.extraSpecialArgs = {
-              inherit username;
-              inherit inputs;
-              inherit host;
-              inherit wallpaper;
-              inherit spicetify-nix;
-              inherit pkgs-unstable;
-            };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "rebuild";
-            home-manager.users.${username} = import ./hosts/dell/home.nix;
-          }
-        ];
+        "dell" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit username;
+            inherit host;
+            inherit wallpaper;
+            inherit pkgs-unstable;
+          };
+          modules = [
+            ./hosts/dell/config.nix
+            inputs.stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            sddm-sugar-candy-nix.nixosModules.default
+            {
+              nixpkgs = {
+                overlays = [ sddm-sugar-candy-nix.overlays.default ];
+              };
+              home-manager.extraSpecialArgs = {
+                inherit username;
+                inherit inputs;
+                inherit host;
+                inherit wallpaper;
+                inherit spicetify-nix;
+                inherit pkgs-unstable;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "rebuild";
+              home-manager.users.${username} = import ./hosts/dell/home.nix;
+            }
+          ];
+        };
       };
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
-  };
-  
 }

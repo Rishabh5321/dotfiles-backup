@@ -1,7 +1,5 @@
+{ stdenv, fetchzip }:
 {
-  stdenv,
-  fetchzip,
-}: {
   sddm-firewatch = stdenv.mkDerivation rec {
     pname = "firewatch-sddm";
     version = "V1";

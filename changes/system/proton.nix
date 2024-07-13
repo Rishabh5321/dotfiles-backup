@@ -6,7 +6,8 @@
   username,
   options,
   ...
-}: {
+}:
+{
   #PROTON
   #added protonup in systempkgs
   environment.sessionVariables = {

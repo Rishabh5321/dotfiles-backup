@@ -1,12 +1,10 @@
+{ pkgs, fetchgit, ... }:
+let
+  inherit (pkgs) musl;
+  inherit (pkgs) libvirt;
+  inherit (pkgs) libxml2;
+in
 {
-  pkgs,
-  fetchgit,
-  ...
-}: let
-  musl = pkgs.musl;
-  libvirt = pkgs.libvirt;
-  libxml2 = pkgs.libxml2;
-in {
   schemer = pkgs.buildGoPackage rec {
     pname = "schemer2";
     version = "2";

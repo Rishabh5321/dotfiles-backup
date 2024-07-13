@@ -1,8 +1,5 @@
+{ lib, osConfig, ... }:
 {
-  lib,
-  osConfig,
-  ...
-}: {
   services.hypridle = {
     enable = true;
     settings = {

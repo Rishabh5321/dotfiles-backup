@@ -1,8 +1,5 @@
+{ pkgs, config, ... }:
 {
-  pkgs,
-  config,
-  ...
-}: {
   #services.desktopManager.plasma6.enable = true;
   #  services.xserver = {
   #    enable = true;
@@ -16,15 +13,15 @@
   #  ];
   #
   /*
-  services.xserver = {
-    enable = true;
-    libinput.enable = true;
-    displayManager.lightdm.enable = true;
-    desktopManager.xfce.enable = true;
-    displayManager.defaultSession = "hyprland";
-    windowManager.i3 = {
-       enable = true;
-      };
-  };
+    services.xserver = {
+      enable = true;
+      libinput.enable = true;
+      displayManager.lightdm.enable = true;
+      desktopManager.xfce.enable = true;
+      displayManager.defaultSession = "hyprland";
+      windowManager.i3 = {
+         enable = true;
+        };
+    };
   */
 }
