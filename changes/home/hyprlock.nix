@@ -1,6 +1,9 @@
-{ config, wallpaper, username, ... }:
-
-let
+{
+  config,
+  wallpaper,
+  username,
+  ...
+}: let
   color0 = "rgb(${config.stylix.base16Scheme.base00})";
   color1 = "rgb(${config.stylix.base16Scheme.base01})";
   color2 = "rgb(${config.stylix.base16Scheme.base02})";
@@ -17,19 +20,17 @@ let
   color13 = "rgb(${config.stylix.base16Scheme.base0D})";
   color14 = "rgb(${config.stylix.base16Scheme.base0E})";
   color15 = "rgb(${config.stylix.base16Scheme.base0F})";
-in
-{
+in {
   programs.hyprlock = {
     enable = true;
 
     sourceFirst = true;
 
     settings = {
-
       # GENERAL
       general = {
-          disable_loading_bar = true;
-          hide_cursor = true;
+        disable_loading_bar = true;
+        hide_cursor = true;
       };
 
       # BACKGROUND
@@ -49,24 +50,23 @@ in
 
       # TIME
       label = [
-      {
-        text = "cmd[update:30000] echo \"$(date +\"%I:%M %p\")\"";
-        color = color5;
-        font_size = 90;
-        position = "-30, 0";
-        halign = "right";
-        valign = "top";
-      }
-      {
-        text = "cmd[update:43200000] echo \"$(date +\"%A, %d %B %Y\")\"";
-        color = color5;
-        font_size = 25;
-        position = "-30, -150";
-        halign = "right";
-        valign = "top";
-      }
-];
-
+        {
+          text = "cmd[update:30000] echo \"$(date +\"%I:%M %p\")\"";
+          color = color5;
+          font_size = 90;
+          position = "-30, 0";
+          halign = "right";
+          valign = "top";
+        }
+        {
+          text = "cmd[update:43200000] echo \"$(date +\"%A, %d %B %Y\")\"";
+          color = color5;
+          font_size = 25;
+          position = "-30, -150";
+          halign = "right";
+          valign = "top";
+        }
+      ];
 
       # INPUT FIELD
       input-field = [
@@ -91,7 +91,6 @@ in
           valign = "center";
         }
       ];
-
     };
   };
 }

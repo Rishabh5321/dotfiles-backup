@@ -5,24 +5,21 @@
   config,
   spicetify-nix,
   ...
-}:
-{
+}: {
   imports = [
     inputs.spicetify-nix.homeManagerModules.default
-  ];  
-  programs.spicetify =
-   let
-     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-     palette = config.stylix.base16Scheme;
-   in
-   {
-   enable = true;
-   enabledExtensions = with spicePkgs.extensions; [
-     adblock
-     hidePodcasts
-     shuffle # shuffle+ (special characters are sanitized out of extension names)
-   ];
-   theme = spicePkgs.themes.ziro;
+  ];
+  programs.spicetify = let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    palette = config.stylix.base16Scheme;
+  in {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
+    theme = spicePkgs.themes.ziro;
     colorScheme = "custom";
     customColorScheme = {
       text = "${palette.base0B}";
@@ -50,6 +47,5 @@
       pagelink-active = "${palette.base04}";
       radio-btn-active = "${palette.base04}";
     };
-
   };
 }
