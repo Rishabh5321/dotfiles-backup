@@ -7,8 +7,8 @@
         lock_cmd = "hyprlock";
         before_sleep_cmd = "hyprlock";
         after_sleep_cmd = "hyprctl dispatch dpms on";
-        ignore_dbus_inhibit = false;             # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
-        ignore_systemd_inhibit = false;          # whether to ignore systemd-inhibit --what=idle inhibitors
+        ignore_dbus_inhibit = false; # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
+        ignore_systemd_inhibit = false; # whether to ignore systemd-inhibit --what=idle inhibitors
       };
 
       listener = [
