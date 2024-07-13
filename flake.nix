@@ -17,9 +17,9 @@
       url = "github:VonHeikemen/fine-cmdline.nvim";
       flake = false;
     };
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
-    };
+    #wezterm = {
+    #  url = "github:wez/wezterm?dir=nix";
+    #};
     # This is required for plugin support.
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland.inputs.nixpkgs.follows = "nixpkgs";
@@ -49,7 +49,7 @@
       sddm-sugar-candy-nix,
       alejandra,
       spicetify-nix,
-      wezterm,
+      #wezterm,
       ...
     }@inputs:
     let

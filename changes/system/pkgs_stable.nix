@@ -35,7 +35,7 @@
       gnome.nautilus
       google-chrome
       jellyfin-media-player
-      inputs.wezterm.packages.${pkgs.system}.default
+      #inputs.wezterm.packages.${pkgs.system}.default
       kodi-wayland
       lazycli
       lazydocker

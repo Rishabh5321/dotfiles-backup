@@ -18,6 +18,7 @@
     protonup-qt
     rquickshare
     zed-editor
+    wezterm
     vscode
     #plex
   ];

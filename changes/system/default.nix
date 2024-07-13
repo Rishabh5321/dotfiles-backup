@@ -33,4 +33,11 @@
     FLAKE = "~/dotfiles";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
+
+  environment.systemPackages = with pkgs; [
+    (pkgs.writeShellScriptBin "wezterm-new" ''
+      #!/bin/bash
+      wezterm start --always-new-process "$@"
+    '')
+  ];
 }
