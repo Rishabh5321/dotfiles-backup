@@ -56,17 +56,13 @@
     astronaut #name astronaut
     pkgs.libsForQt5.qt5.qtgraphicaleffects
   ];
-*/
-    services.xserver = {
-    enable = true;
-    displayManager.gdm = {
-        enable = true;
-        autoSuspend = if config.networking.hostName == "dell" then false else true;
-        #greeters.gtk = {
-        #  enable = true;
-        #};
-    };
-    };
-    services.displayManager.defaultSession = "hyprland";
 
+services = {
+   xserver = {
+     displayManager.defaultSession = "hyprland";
+     displayManager.lightdm = {
+       enable = true;
+     };
+    };
+};*/
 }
