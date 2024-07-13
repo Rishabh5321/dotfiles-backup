@@ -35,7 +35,7 @@
     "org.gnome.settings-daemon.plugins.power" = {
     sleep-inactive-ac-timeout = 60;
     sleep-inactive-battery-timeout = 60;
-    }
+    };
 
 
     "org/gnome/shell/extensions/clipboard-indicator" = {
