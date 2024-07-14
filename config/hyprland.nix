@@ -9,7 +9,7 @@
   ...
 }:
 let
-  hyprplugins = inputs.hyprland-plugins.packages.${pkgs.system};
+  #hyprplugins = inputs.hyprland-plugins.packages.${pkgs.system};
   inherit (import ../changes/system/variables.nix) browser terminal extraMonitorSettings;
 in
 with lib;
