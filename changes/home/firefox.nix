@@ -27,6 +27,5 @@
     user_pref("browser.uitour.enabled", false);
 
   '';
-  home.file.".mozilla/firefox/x1px2170.default/chrome/userChrome.css".text = ''
-   '';
+  home.file.".mozilla/firefox/x1px2170.default/chrome/userChrome.css".text = '''';
 }
