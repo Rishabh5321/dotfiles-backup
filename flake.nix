@@ -17,10 +17,6 @@
       url = "github:VonHeikemen/fine-cmdline.nvim";
       flake = false;
     };
-    #wezterm = {
-    #  url = "github:wez/wezterm?dir=nix";
-    #};
-    # This is required for plugin support.
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland.inputs.nixpkgs.follows = "nixpkgs";
     hyprland-plugins = {
