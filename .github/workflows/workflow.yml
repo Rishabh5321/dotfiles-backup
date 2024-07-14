@@ -15,6 +15,16 @@ jobs:
       contents: write
 
     steps:
+    - name: Send Test Telegram Notification
+      run: |
+        MESSAGE="This is a test message from GitHub Actions"
+        curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
+          -d chat_id=$CHAT_ID \
+          -d text="$MESSAGE"
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+
     - name: Checkout repository
       id: checkout
       uses: actions/checkout@v4
@@ -58,14 +68,18 @@ jobs:
     - name: Set Failed Step
       if: failure()
       run: |
-        echo "failed_step=${{ steps.*.outcome == 'failure' && steps.*.name }}" >> $GITHUB_ENV
+        for step in ${{ toJson(steps) }}; do
+          if [ "$step.outcome" == "failure" ]; then
+            echo "failed_step=${step.name}" >> $GITHUB_ENV
+            break
+          fi
+        done
 
     - name: Send Telegram Notification
       if: always()
       run: |
         if [ "${{ env.result }}" == "failure" ]; then
-          STEP_NAME=${{ env.failed_step }}
-          MESSAGE="GitHub Action failed: $STEP_NAME"
+          MESSAGE="GitHub Action failed at step: ${{ env.failed_step }}"
         else
           MESSAGE="GitHub Action completed successfully: Flake Check"
         fi
