@@ -19,10 +19,12 @@
   '';
   home.file.".mozilla/firefox/x1px2170.default/user.js".text = ''
     user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+    user_pref("layers.acceleration.force-enabled", true);
+    user_pref("gfx.webrender.all", true);
+    user_pref("svg.context-properties.content.enabled", true);
     user_pref("browser.cache.disk.enable", false);
     user_pref("browser.cache.memory.capacity", 524288);
     user_pref("browser.sessionstore.interval", 15000000);
-    user_pref("accessibility.force_disabled", 1);
     user_pref("browser.helperApps.deleteTempFileOnExit", true);
     user_pref("browser.uitour.enabled", false);
 
@@ -83,223 +85,235 @@
     user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstsession", false);
     user_pref("browser.vpn_promo.enabled", false);
 
-    /** STUDIES ***/
-
-    /* disable Studies ***/
-    user_pref("app.shield.optoutstudies.enabled", false);
-    /* disable Normandy/Shield [FF60+]
-     * Shield is a telemetry system that can push and test "recipes" ***/
-    user_pref("app.normandy.enabled", false);
-    user_pref("app.normandy.api_url", "");
-
-    /** CRASH REPORTS ***/
-
-    /* disable Crash Reports ***/
-    user_pref("breakpad.reportURL", "");
-    user_pref("browser.tabs.crashReporting.sendReport", false);
-    /* enforce no submission of backlogged Crash Reports [FF58+]
-     * [SETTING] Privacy & Security>Firefox Data Collection & Use>Allow Firefox to send backlogged crash reports  ***/
-    user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-
-    /** OTHER ***/
-
-    /* 0360: disable Captive Portal detection
-     * [1] https://www.eff.org/deeplinks/2017/08/how-captive-portals-interfere-wireless-security-and-privacy ***/
-    user_pref("captivedetect.canonicalURL", "");
-    user_pref("network.captive-portal-service.enabled", false);
-    /* disable Network Connectivity checks
-     * [1] https://bugzilla.mozilla.org/1460537 ***/
-    user_pref("network.connectivity-service.enabled", false);
-
-    /*** [GEOLOCATION / LANGUAGE / LOCALE ***/
-
-    /* use Mozilla geolocation service instead of Google.*/
-    user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
-    /* disable using the OS's geolocation service ***/
-    user_pref("geo.provider.ms-windows-location", false); // [WINDOWS]
-    user_pref("geo.provider.use_corelocation", false); // [MAC]
-    user_pref("geo.provider.use_gpsd", false); // [LINUX]
-    user_pref("geo.provider.use_geoclue", false); // [FF102+] [LINUX]
-
-    /*** disable search suggest ***/
-    //user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
-    //user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
-
-    /*** disable autofill ***/
-    //user_pref("browser.formfill.enable", false);
-    //user_pref("signon.autofillForms", false);
-    //user_pref("signon.formlessCapture.enabled", false);
-
-    // Integrated calculator at urlbar
-    user_pref("browser.urlbar.suggest.calculator", true);
-
   '';
   home.file.".mozilla/firefox/x1px2170.default/chrome/userChrome.css".text = ''
-    /*
-    * penguinFox
-    * by p3nguin-kun
-    */
+ /* 
+┌─┐┬┌┬┐┌─┐┬  ┌─┐
+└─┐││││├─┘│  ├┤ 
+└─┘┴┴ ┴┴  ┴─┘└─┘
+┌─┐┌─┐─┐ ┬      
+├┤ │ │┌┴┬┘      
+└  └─┘┴ └─
 
-    /* config */
+by Miguel Avila
 
-    * {
-      --animation-speed: 0.2s;
-      --button-corner-rounding: 30px;
-      --urlbar-container-height: 40px !important;
-      --urlbar-min-height: 30px !important;
-      --urlbar-height: 30px !important;
-      --urlbar-toolbar-height: 38px !important;
-      --moz-hidden-unscrollable: scroll !important;
-      --toolbarbutton-border-radius: 3px !important;
-      --tabs-border-color: transparent;
-    }
+*/
 
-    :root {
-        --window: -moz-Dialog !important;
-        --secondary: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;
-        --uc-border-radius: 0px;
-        --uc-status-panel-spacing: 0px;
-        --uc-page-action-margin: 7px;
-    }
+/*
+ 
+┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
+│  │ ││││├┤ ││ ┬│ │├┬┘├─┤ │ ││ ││││
+└─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
 
-    /* animation and effect */
-    #nav-bar:not([customizing]) {
-      visibility: visible;
-      margin-top: -40px;
-      transition-delay: 0.1s;
-      filter: alpha(opacity=0);
-      opacity: 0;
-      transition: visibility, ease 0.1s, margin-top, ease 0.1s, opacity, ease 0.1s,
-      rotate, ease 0.1s !important;
-    }
+*/
 
-    #nav-bar:hover,
-    #nav-bar:focus-within,
-    #urlbar[focused='true'],
-    #identity-box[open='true'],
-    #titlebar:hover + #nav-bar:not([customizing]),
-    #toolbar-menubar:not([inactive='true']) ~ #nav-bar:not([customizing]) {
-      visibility: visible;
+:root {
+  --sfwindow: #19171a;
+  --sfsecondary: #201e21;
+}
 
-      margin-top: 0px;
-      filter: alpha(opacity=100);
-      opacity: 100;
-      margin-bottom: -0.2px;
-    }
-    #PersonalToolbar {
-      margin-top: 0px;
-    }
-    #nav-bar .toolbarbutton-1[open='true'] {
-      visibility: visible;
-      opacity: 100;
-    }
+/* Urlbar View */
 
-    :root:not([customizing]) :hover > .tabbrowser-tab:not(:hover) {
-      transition: blur, ease 0.1s !important;
-    }
+/*─────────────────────────────*/
+/* Comment this section if you */
+/* want to show the URL Bar    */
+/*─────────────────────────────*/
 
-    :root:not([customizing]) :not(:hover) > .tabbrowser-tab {
-      transition: blur, ease 0.1s !important;
-    }
+.urlbarView {
+  display: none !important;
+}
 
-    #tabbrowser-tabs .tab-label-container[customizing] {
-      color: transparent;
-      transition: ease 0.1s;
-      transition-delay: 0.2s;
-    }
+/*─────────────────────────────*/
 
-    .tabbrowser-tab:not([pinned]) .tab-icon-image ,.bookmark-item .toolbarbutton-icon{opacity: 0!important; transition: .15s !important; width: 0!important; padding-left: 16px!important}
-    .tabbrowser-tab:not([pinned]):hover .tab-icon-image,.bookmark-item:hover .toolbarbutton-icon{opacity: 100!important; transition: .15s !important; display: inline-block!important; width: 16px!important; padding-left: 0!important}
-    .tabbrowser-tab:not([hover]) .tab-icon-image,.bookmark-item:not([hover]) .toolbarbutton-icon{padding-left: 0!important}
+/* 
+┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
+│  │ ││  │ │├┬┘└─┐
+└─┘└─┘┴─┘└─┘┴└─└─┘ 
+*/
 
-    /*  Removes annoying buttons and spaces */
-    .titlebar-spacer[type="pre-tabs"], .titlebar-spacer[type="post-tabs"]{display: none !important}
-    #tabbrowser-tabs{border-inline-start-width: 0!important}
+/* Tabs colors  */
+#tabbrowser-tabs:not([movingtab])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[multiselected='true'],
+#tabbrowser-tabs:not([movingtab])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[selected='true'] {
+  background-image: none !important;
+  background-color: var(--toolbar-bgcolor) !important;
+}
 
-    /*  Makes some buttons nicer  */
-    #PanelUI-menu-button, #unified-extensions-button, #reload-button, #stop-button {padding: 2px !important}
-    #reload-button, #stop-button{margin: 1px !important;}
+/* Inactive tabs color */
+#navigator-toolbox {
+  background-color: var(--sfwindow) !important;
+}
 
-    /* X-button */
-    :root {
-        --show-tab-close-button: none;
-        --show-tab-close-button-hover: -moz-inline-block;
-    }
-    .tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
-    .tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }
+/* Window colors  */
+:root {
+  --toolbar-bgcolor: var(--sfsecondary) !important;
+  --tabs-border-color: var(--sfsecondary) !important;
+  --lwt-sidebar-background-color: var(--sfwindow) !important;
+  --lwt-toolbar-field-focus: var(--sfsecondary) !important;
+}
 
-    /* tabbar */
+/* Sidebar color  */
+#sidebar-box,
+.sidebar-placesTree {
+  background-color: var(--sfwindow) !important;
+}
 
-    /* Hide the secondary Tab Label
-     * e.g. playing indicator (the text, not the icon) */
-    .tab-secondary-label { display: none !important; }
+/* 
 
-    :root {
-      --toolbarbutton-border-radius: 0 !important;
-      --tab-border-radius: 0 !important;
-      --tab-block-margin: 0 !important;
-    }
+┌┬┐┌─┐┬  ┌─┐┌┬┐┌─┐            
+ ││├┤ │  ├┤  │ ├┤             
+─┴┘└─┘┴─┘└─┘ ┴ └─┘            
+┌─┐┌─┐┌┬┐┌─┐┌─┐┌┐┌┌─┐┌┐┌┌┬┐┌─┐
+│  │ ││││├─┘│ ││││├┤ │││ │ └─┐
+└─┘└─┘┴ ┴┴  └─┘┘└┘└─┘┘└┘ ┴ └─┘
 
-    .tabbrowser-tab:is([visuallyselected='true'], [multiselected])
-      > .tab-stack
-      > .tab-background {
-      box-shadow: none !important;
-    }
+*/
 
-    .tab-background {
-      border-right: 0px solid rgba(0, 0, 0, 0) !important;
-      margin-left: -1px !important;
-    }
+/* Tabs elements  */
+.tab-close-button {
+  display: none;
+}
 
-    .tabbrowser-tab[last-visible-tab='true'] {
-      padding-inline-end: 0 !important;
-    }
+.tabbrowser-tab:not([pinned]) .tab-icon-image {
+  display: none !important;
+}
 
-    #tabs-newtab-button {
-      padding-left: 0 !important;
-    }
+#nav-bar:not([tabs-hidden='true']) {
+  box-shadow: none;
+}
 
-    /* multi tab selection */
-    #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([multiselected])
-      > .tab-stack
-      > .tab-background:-moz-lwtheme { outline-color: var(--toolbarseparator-color) !important; }
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
+}
 
-    /* remove gap after pinned tabs */
-    #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
-      > #tabbrowser-arrowscrollbox
-      > .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) { margin-inline-start: 0 !important; }
+:root {
+  --toolbarbutton-border-radius: 0 !important;
+  --tab-border-radius: 0 !important;
+  --tab-block-margin: 0 !important;
+}
 
-    /*  Removes annoying border  */
-    #navigator-toolbox{border:none !important;}
+.tab-background {
+  border-right: 0px solid rgba(0, 0, 0, 0) !important;
+  margin-left: -4px !important;
+}
 
-    /*  Removes the annoying rainbow thing from the hamburger  */
-    #appMenu-fxa-separator{border-image:none !important;}
+.tabbrowser-tab:is([visuallyselected='true'], [multiselected])
+  > .tab-stack
+  > .tab-background {
+  box-shadow: none !important;
+}
+
+.tabbrowser-tab[last-visible-tab='true'] {
+  padding-inline-end: 0 !important;
+}
+
+#tabs-newtab-button {
+  padding-left: 0 !important;
+}
+
+/* Url Bar  */
+#urlbar-input-container {
+  background-color: var(--sfsecondary) !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+}
+
+#urlbar-container {
+  margin-left: 0 !important;
+}
+
+#urlbar[focused='true'] > #urlbar-background {
+  box-shadow: none !important;
+}
+
+#navigator-toolbox {
+  border: none !important;
+}
+
+/* Bookmarks bar  */
+.bookmark-item .toolbarbutton-icon {
+  display: none;
+}
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  min-width: 1.6em;
+}
+
+/* Toolbar  */
+#tracking-protection-icon-container,
+#urlbar-zoom-button,
+#star-button-box,
+#pageActionButton,
+#pageActionSeparator,
+#tabs-newtab-button,
+#back-button,
+#PanelUI-button,
+#forward-button,
+.tab-secondary-label {
+  display: none !important;
+}
+
+.urlbarView-url {
+  color: #dedede !important;
+}
+
+/* Disable elements  */
+#context-navigation,
+#context-savepage,
+#context-pocket,
+#context-sendpagetodevice,
+#context-selectall,
+#context-viewsource,
+#context-inspect-a11y,
+#context-sendlinktodevice,
+#context-openlinkinusercontext-menu,
+#context-bookmarklink,
+#context-savelink,
+#context-savelinktopocket,
+#context-sendlinktodevice,
+#context-searchselect,
+#context-sendimage,
+#context-print-selection {
+  display: none !important;
+}
+
+#context_bookmarkTab,
+#context_moveTabOptions,
+#context_sendTabToDevice,
+#context_reopenInContainer,
+#context_selectAllTabs,
+#context_closeTabOptions {
+  display: none !important;
+}
   '';
   home.file.".mozilla/firefox/x1px2170.default/chrome/userContent.css".text = ''
-    @-moz-document url-prefix(about:){
+    /* 
+┌─┐┬┌┬┐┌─┐┬  ┌─┐
+└─┐││││├─┘│  ├┤ 
+└─┘┴┴ ┴┴  ┴─┘└─┘
+┌─┐┌─┐─┐ ┬      
+├┤ │ │┌┴┬┘      
+└  └─┘┴ └─
 
-    /*  Removes the scrollbar on some places  */
-    body,html{overflow-y: auto}
+by Miguel Avila
 
-    /*  Devtools  */
-    @-moz-document url-prefix(about:devtools){
-    #toolbox-container{margin-top: 10px !important}
-    .devtools-tabbar{background: transparent !important}
-    .devtools-tab-line{border-radius: 0 0 5px 5px}
-    .customize-animate-enter-done,.customize-menu,.top-site-outer:hover,button{background-color: transparent!important}}
+*/
 
-    /*  Newtab  */
-    @-moz-document url("about:home"), url("about:newtab"){
-    .search-wrapper .search-handoff-button .fake-caret {top: 13px !important; inset-inline-start: 48px !important}
-    .search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
-    .search-wrapper .search-handoff-button .fake-caret{top: 13px !important; inset-inline-start: 48px !important}
-    .search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
-    .outer-wrapper .search-wrapper{padding: 0px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; align-content: space-around !important; gap: 20px 10px !important}
-    .search-wrapper .logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
-    .search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
-    .search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
-    .outer-wrapper.ds-outer-wrapper-breakpoint-override.only-search.visible-logo{display: flex !important; padding-top: 0px !important;vertical-align: middle}
-    .customize-menu{border-radius: 10px 0 0 10px !important}
-    #root > div{align-items: center; display: flex}}}
+:root {
+  scrollbar-width: none !important;
+}
+
+@-moz-document url(about:privatebrowsing) {
+  :root {
+    scrollbar-width: none !important;
+  }
+}
   '';
 }
