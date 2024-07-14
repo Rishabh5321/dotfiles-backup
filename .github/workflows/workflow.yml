@@ -37,7 +37,7 @@ jobs:
 
     - name: Install Nix Linting and Formatting Tools
       id: install-tools
-      run: nix-env -i statix nixpkgs-fmt -f '<nixpkgs>'
+      run: nix-env -iA nixpkgs.statix nixpkgs.nixpkgs-fmt
 
     - name: Run Statix Lint
       id: run-statix
@@ -45,7 +45,7 @@ jobs:
 
     - name: Run Nix Format
       id: run-nix-fmt
-      run: nix fmt
+      run: nixpkgs-fmt .
 
     - name: Nix Flake Check - Manual
       id: nix-flake-check-manual
@@ -68,12 +68,7 @@ jobs:
     - name: Set Failed Step
       if: failure()
       run: |
-        for step in ${{ steps }}; do
-          if [ "${{ step.outcome }}" == "failure" ]; then
-            echo "failed_step=${{ step.name }}" >> $GITHUB_ENV
-            break
-          fi
-        done
+        echo "failed_step=$(jq -r '.steps[] | select(.conclusion == "failure") | .name' <<< ${{ toJson(steps) }})" >> $GITHUB_ENV
 
     - name: Read Flake Check Output
       id: read-flake-output
@@ -93,7 +88,6 @@ jobs:
         else
           MESSAGE="GitHub Action completed successfully: Flake Check\n\nFlake Check Output:\n${{ env.flake_output }}"
         fi
-        echo "$MESSAGE"
         curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id=$CHAT_ID \
           -d text="$MESSAGE"
