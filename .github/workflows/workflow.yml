@@ -37,7 +37,7 @@ jobs:
 
     - name: Install Nix Linting and Formatting Tools
       id: install-tools
-      run: nix-env -iA nixpkgs.statix nixpkgs.nixpkgs-fmt
+      run: nix-env -i statix nixpkgs-fmt -f '<nixpkgs>
 
     - name: Run Statix Lint
       id: run-statix
