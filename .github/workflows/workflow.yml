@@ -17,7 +17,7 @@ jobs:
     steps:
     - name: Send Test Telegram Notification
       run: |
-        MESSAGE="This is a test message from GitHub Actions"
+        MESSAGE="Checking Repo Rishabh5321/dotfiles please wait for furthur report"
         curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id=$CHAT_ID \
           -d text="$MESSAGE"
@@ -37,7 +37,7 @@ jobs:
 
     - name: Install Nix Linting and Formatting Tools
       id: install-tools
-      run: nix-env -i statix nixpkgs-fmt -f '<nixpkgs>
+      run: nix-env -i statix nixpkgs-fmt -f '<nixpkgs>'
 
     - name: Run Statix Lint
       id: run-statix
@@ -45,7 +45,7 @@ jobs:
 
     - name: Run Nix Format
       id: run-nix-fmt
-      run: nixpkgs-fmt .
+      run: nix fmt
 
     - name: Nix Flake Check - Manual
       id: nix-flake-check-manual
@@ -68,7 +68,12 @@ jobs:
     - name: Set Failed Step
       if: failure()
       run: |
-        echo "failed_step=$(jq -r '.steps[] | select(.conclusion == "failure") | .name' <<< ${{ toJson(steps) }})" >> $GITHUB_ENV
+        for step in ${{ steps }}; do
+          if [ "${{ step.outcome }}" == "failure" ]; then
+            echo "failed_step=${{ step.name }}" >> $GITHUB_ENV
+            break
+          fi
+        done
 
     - name: Read Flake Check Output
       id: read-flake-output
