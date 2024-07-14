@@ -31,6 +31,7 @@
       figlet
       gh
       hyprlock
+      hyprshot
       gnome.gnome-disk-utility
       gnome.gnome-system-monitor
       gnome.nautilus
