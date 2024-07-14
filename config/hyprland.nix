@@ -94,8 +94,6 @@ with lib;
           windowrule = animation fade,^(wlogout)$
           windowrule = fullscreen, ^(wlogout)$
           windowrulev2 = dimaround, class:^(polkit-gnome-authentication-agent-1)$
-          windowrulev2 = float,class:^(org.wezfurlong.wezterm)$
-          windowrulev2 = tile,class:^(org.wezfurlong.wezterm)$
           gestures {
             workspace_swipe = true
           }
