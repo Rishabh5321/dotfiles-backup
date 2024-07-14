@@ -43,7 +43,7 @@ appimageTools.wrapType2 {
   # gui application isn't attached to the terminal session
   dieWithParent = false;
 
-  extraPkgs = pkgs: [
+  extraPkgs = _pkgs: [
     unzip
     autoPatchelfHook
     asar

@@ -1,6 +1,5 @@
 { pkgs, fetchgit, ... }:
 let
-  inherit (pkgs) musl;
   inherit (pkgs) libvirt;
   inherit (pkgs) libxml2;
 in
