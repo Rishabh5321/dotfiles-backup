@@ -28,6 +28,7 @@
       ffmpeg
       firefox
       floorp
+      figlet
       gh
       hyprlock
       gnome.gnome-disk-utility
