@@ -1,6 +1,9 @@
 name: Flake Check
 
 on: 
+  push:
+  pull_request:
+  workflow_dispatch:
   schedule:
     - cron: '0 */12 * * *'
 
@@ -14,7 +17,7 @@ jobs:
     steps:
     - name: Send Test Telegram Notification
       run: |
-        MESSAGE="This is a test message from GitHub Actions"
+        MESSAGE="Checking repo Rishabh5321/dotfiles please wait for response"
         curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id=$CHAT_ID \
           -d text="$MESSAGE"
@@ -76,9 +79,9 @@ jobs:
       if: always()
       run: |
         if [ "${{ env.result }}" == "failure" ]; then
-          MESSAGE="GitHub Action failed at step: ${{ env.failed_step }}"
+          MESSAGE="Flake Check:GitHub Action failed at step: ${{ env.failed_step }}"
         else
-          MESSAGE="GitHub Action completed successfully: Flake Check"
+          MESSAGE="GitHub Action completed successfully: Flake Check:Rishabh:5321"
         fi
         curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id=$CHAT_ID \
