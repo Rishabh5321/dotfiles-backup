@@ -6,21 +6,11 @@
 }:
 let
   color0 = "rgb(${config.stylix.base16Scheme.base00})";
-  color1 = "rgb(${config.stylix.base16Scheme.base01})";
   color2 = "rgb(${config.stylix.base16Scheme.base02})";
-  color3 = "rgb(${config.stylix.base16Scheme.base03})";
-  color4 = "rgb(${config.stylix.base16Scheme.base04})";
   color5 = "rgb(${config.stylix.base16Scheme.base05})";
-  color6 = "rgb(${config.stylix.base16Scheme.base06})";
-  color7 = "rgb(${config.stylix.base16Scheme.base07})";
   color8 = "rgb(${config.stylix.base16Scheme.base08})";
-  color9 = "rgb(${config.stylix.base16Scheme.base09})";
   color10 = "rgb(${config.stylix.base16Scheme.base0A})";
-  color11 = "rgb(${config.stylix.base16Scheme.base0B})";
-  color12 = "rgb(${config.stylix.base16Scheme.base0C})";
-  color13 = "rgb(${config.stylix.base16Scheme.base0D})";
   color14 = "rgb(${config.stylix.base16Scheme.base0E})";
-  color15 = "rgb(${config.stylix.base16Scheme.base0F})";
 in
 {
   programs.hyprlock = {

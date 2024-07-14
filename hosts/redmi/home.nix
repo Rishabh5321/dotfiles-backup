@@ -5,9 +5,6 @@
   wallpaper,
   ...
 }:
-let
-  inherit (import ../../changes/system/variables.nix) gitUsername gitEmail;
-in
 {
   # Home Manager Settings
   home.username = "${username}";
