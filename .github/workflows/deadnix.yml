@@ -13,3 +13,11 @@ jobs:
         with:
           name: deadnix
       - uses: astro/deadnix-action@main
+      - name: Push changes
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://Rishabh5321:${{ secrets.PAT }}@github.com/Rishabh5321/dotfiles.git
+          git push --force-with-lease origin deadnix:refs/heads/deadnix
