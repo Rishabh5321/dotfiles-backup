@@ -8,7 +8,7 @@
 }:
 {
   services.displayManager = {
-    enable = true;
+    enable = false;
     sddm = {
       enable = true;
       wayland = {

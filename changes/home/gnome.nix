@@ -31,15 +31,6 @@ in
         "org.gnome.Nautilus.desktop"
         "floorp.desktop"
         "code.desktop"
-        "github-desktop"
-        "bitwarden.desktop"
-        "steam.desktop"
-        "com.heroicgameslauncher.hgl.desktop"
-        "net.lutris.Lutris.desktop"
-        "cursor.desktop"
-        "discord.desktop"
-        "telegramdesktop.desktop"
-        "plexmediaplayer.desktop"
       ];
     };
 
