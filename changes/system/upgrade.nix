@@ -5,7 +5,7 @@ _: {
   # I recommend running `topgrade` once a week or at least once a month)
   system.autoUpgrade = {
     enable = true;
-    operation = "switch"; # If you don't want to apply updates immediately, only after rebooting, use `boot` option in this case
+    operation = "boot"; # If you don't want to apply updates immediately, only after rebooting, use `boot` option in this case
     flake = "/home/rishabh/dotfiles";
     flags = [
       "--update-input"
