@@ -5,7 +5,7 @@
   ...
 }:
 {
-   programs.gnome-shell = {
+  programs.gnome-shell = {
     enable = true;
     extensions = [
       { package = pkgs.gnomeExtensions.appindicator; }
@@ -20,9 +20,9 @@
   dconf.settings = {
 
     "org/gnome/shell" = {
-          disable-user-extensions = false;
-          enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-        };
+      disable-user-extensions = false;
+      enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+    };
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-brightness = -0.1;
@@ -57,10 +57,10 @@
     };
 
     "org/gnome/shell/extensions/alphabetical-app-grid" = {
-        folder-order-position = "alphabetical";
-        logging-enabled = false;
-        show-favourite-apps = false;
-        sort-folder-contents = true;
-      };
+      folder-order-position = "alphabetical";
+      logging-enabled = false;
+      show-favourite-apps = false;
+      sort-folder-contents = true;
+    };
   };
 }
