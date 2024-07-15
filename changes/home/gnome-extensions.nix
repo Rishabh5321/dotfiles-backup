@@ -69,7 +69,7 @@
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       dock-fixed = false;
-      intellihide-mode = "1"; 
+      intellihide-mode = "1";
       dash-max-icon-size = 48;
       dodge-windows = true;
       intellihide = true;
