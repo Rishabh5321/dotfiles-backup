@@ -57,7 +57,7 @@
       next-entry = [ "<Shift><Control>p" ];
       prev-entry = [ "<Shift><Control>o" ];
       private-mode-binding = [ ];
-      toggle-menu = [ "<Super>v" ];
+      toggle-menu = [ "<Shift><Control>v" ];
     };
 
     "org/gnome/shell/extensions/alphabetical-app-grid" = {
