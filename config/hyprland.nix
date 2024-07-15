@@ -63,8 +63,8 @@ with lib;
           monitor=,preferred,auto,1
           ${extraMonitorSettings}
           general {
-            gaps_in = 6
-            gaps_out = 8
+            gaps_in = 1
+            gaps_out = 2
             border_size = 2
             layout = master
             resize_on_border = true
