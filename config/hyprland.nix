@@ -15,7 +15,7 @@ in
 with lib;
 {
   services.kdeconnect = {
-    package = pkgs.kdePackages.kdeconnect-kde;
+    package = pkgs.gnomeExtensions.gsconnect;
     enable = true;
   };
   wayland.windowManager.hyprland = {
