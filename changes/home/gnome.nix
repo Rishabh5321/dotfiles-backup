@@ -7,7 +7,7 @@
   ...
 }:
 {
- dconf.settings = {
+  dconf.settings = {
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       enable-hot-corners = false;
@@ -17,32 +17,32 @@
     # Use capslock as super key
     "org/gnome/desktop/input-sources" = {
       xkb-options = [
-        "win:super" 
+        "win:super"
         "numpad:mac" # always enable numlock
         "f:XF86AudioRaiseVolume"
       ];
-    };  
+    };
 
-  "org/gnome/desktop/peripherals/touchpad" = {
+    "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
     };
 
-  "org/gnome/desktop/notifications" = {
+    "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
     };
 
-  "org/gnome/desktop/sound" = {
+    "org/gnome/desktop/sound" = {
       allow-volume-above-100-percent = true;
       event-sounds = false;
     };
 
-  "org/gnome/desktop/wm/keybindings" = {
+    "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
       toggle-fullscreen = [ "<Super>Print" ];
-      switch-windows = ["<Alt>Tab"];
-      switch-applications = ["<Super>Tab"];
-      switch-windows-backward = ["<Shift><Alt>Tab"];
-      switch-applications-backward = ["<Shift><Super>Tab"];
+      switch-windows = [ "<Alt>Tab" ];
+      switch-applications = [ "<Super>Tab" ];
+      switch-windows-backward = [ "<Shift><Alt>Tab" ];
+      switch-applications-backward = [ "<Shift><Super>Tab" ];
     };
 
     "org/gnome/mutter" = {
@@ -58,6 +58,5 @@
     "org.gnome.desktop.wm.preferences focus-mode" = {
       focus-mode = "sloppy";
     };
-
-  };  
+  };
 }
