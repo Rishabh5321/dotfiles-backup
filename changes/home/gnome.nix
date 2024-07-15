@@ -48,6 +48,7 @@
     "org/gnome/mutter" = {
       overlay-key = "Super_L";
       edge-tiling = true;
+      focus-mode = "sloppy";
     };
 
     "org/gnome/shell" = {
@@ -55,8 +56,5 @@
       disable-user-extensions = false;
     };
 
-    "org.gnome.desktop.wm.preferences focus-mode" = {
-      focus-mode = "sloppy";
-    };
-  };
+  };  
 }
