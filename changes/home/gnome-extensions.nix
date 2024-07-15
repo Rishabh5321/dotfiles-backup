@@ -22,10 +22,10 @@
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      enabled-extensions = [ 
+      enabled-extensions = [
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "org/gnome/shell/extensions/dash-to-dock"
-       ];
+      ];
     };
 
     "org/gnome/shell/extensions/appindicator" = {
