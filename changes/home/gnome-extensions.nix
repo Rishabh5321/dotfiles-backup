@@ -14,7 +14,7 @@
       { package = pkgs.gnomeExtensions.user-themes; }
       { package = pkgs.gnomeExtensions.alphabetical-app-grid; }
       { package = pkgs.gnomeExtensions.system-monitor; }
-      { package = pkgs.gnomeExtensions.dock-from-dash; }
+      { package = pkgs.gnomeExtensions.dash-to-dock; }
     ];
   };
 
@@ -68,7 +68,8 @@
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
-      transparency-mode = "FIXED";
+      dock-fixed = true;
+      intellihide = true;
     };
   };
 }
