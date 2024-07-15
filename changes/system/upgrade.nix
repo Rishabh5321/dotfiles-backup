@@ -13,7 +13,7 @@ _: {
       "--update-input"
       "--commit-lock-file"
     ];
-    dates = "weekly";
+    dates = "daily";
     # channel = "https://nixos.org/channels/nixos-unstable";
   };
 }
