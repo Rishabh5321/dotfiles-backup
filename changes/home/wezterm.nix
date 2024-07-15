@@ -6,6 +6,6 @@
 }:
 {
   programs.wezterm = {
-    enable = false;
+    enable = true;
   };
 }
