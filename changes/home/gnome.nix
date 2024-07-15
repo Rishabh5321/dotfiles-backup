@@ -54,6 +54,13 @@
     "org/gnome/shell" = {
       disable-extension-version-validation = true;
       disable-user-extensions = false;
+      favorite-apps = [
+        "firefox.desktop"
+        "org.wezfurlong.wezterm.desktop"
+        "org.gnome.Nautilus.desktop"
+        "discord.desktop"
+        "spotify.desktop"
+      ];
     };
   };
 }
