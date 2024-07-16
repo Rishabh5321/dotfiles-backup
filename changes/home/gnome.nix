@@ -27,6 +27,10 @@
       tap-to-click = true;
     };
 
+    "org/gnome/desktop/background" = {
+        #picture-uri="file:///home/${username}/Pictures/Wallpapers/${wallpaper}";
+    };
+
     "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
     };
