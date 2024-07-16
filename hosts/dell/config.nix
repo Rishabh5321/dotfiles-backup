@@ -168,12 +168,6 @@
       openFirewall = true;
     };
     ipp-usb.enable = true;
-    syncthing = {
-      enable = true;
-      user = "${username}";
-      dataDir = "/home/${username}/Study";
-      configDir = "/home/${username}/.config/syncthing";
-    };
     rpcbind.enable = false;
     nfs.server.enable = false;
   };
