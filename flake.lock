@@ -161,11 +161,11 @@
     "fine-cmdline": {
       "flake": false,
       "locked": {
-        "lastModified": 1700512774,
-        "narHash": "sha256-w9wwjClkOWk3wCgEiZIFLZRJ/gAfX38x2LnVRaelKD8=",
+        "lastModified": 1721082103,
+        "narHash": "sha256-SMmOzDhkRBBPCuXXZFUxog6YWRQ2tdlJuJGjYlyNTgk=",
         "owner": "VonHeikemen",
         "repo": "fine-cmdline.nvim",
-        "rev": "dd676584145d62b30d7e8dbdd011796a8f0a065f",
+        "rev": "aec9efebf6f4606a5204d49ffa3ce2eeb7e08a3e",
         "type": "github"
       },
       "original": {
