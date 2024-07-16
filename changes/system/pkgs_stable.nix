@@ -23,6 +23,7 @@
       cursor
       cliphist
       distrobox
+      filezilla
       fast-cli
       fastfetch
       ffmpeg
