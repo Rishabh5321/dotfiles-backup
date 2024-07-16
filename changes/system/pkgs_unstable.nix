@@ -13,7 +13,6 @@
     heroic
     inputs.nix-software-center.packages.${system}.nix-software-center
     inputs.alejandra.defaultPackage.${system}
-    kdeconnect
     lutris
     protonup-qt
     rquickshare

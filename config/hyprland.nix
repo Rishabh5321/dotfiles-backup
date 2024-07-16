@@ -14,10 +14,6 @@ let
 in
 with lib;
 {
-  services.kdeconnect = {
-    package = pkgs.gnomeExtensions.gsconnect;
-    enable = true;
-  };
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;

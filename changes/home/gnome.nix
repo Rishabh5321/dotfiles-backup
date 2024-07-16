@@ -64,7 +64,12 @@
         "org.gnome.Nautilus.desktop"
         "discord.desktop"
         "spotify.desktop"
+        "org.gnome.Bottles.desktop"
       ];
+    };
+    
+    "org.gnome.shell.overrides" = {
+      dynamic-workspaces=true;
     };
   };
 }

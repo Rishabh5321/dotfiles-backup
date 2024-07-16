@@ -15,6 +15,7 @@
       { package = pkgs.gnomeExtensions.alphabetical-app-grid; }
       { package = pkgs.gnomeExtensions.system-monitor; }
       { package = pkgs.gnomeExtensions.dash-to-dock; }
+      { package = pkgs.gnomeExtensions.gsconnect; }
     ];
   };
 
@@ -78,6 +79,10 @@
       dash-show-favorites = true;
       dash-show-running = true;
       dash-show-home = true;
+    };
+    
+  "org/gnome/shell/extensions/gsconnect" = {
+    enable = true;
     };
   };
 }
