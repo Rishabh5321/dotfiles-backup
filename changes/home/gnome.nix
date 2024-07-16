@@ -67,9 +67,9 @@
         "org.gnome.Bottles.desktop"
       ];
     };
-    
+
     "org.gnome.shell.overrides" = {
-      dynamic-workspaces=true;
+      dynamic-workspaces = true;
     };
   };
 }

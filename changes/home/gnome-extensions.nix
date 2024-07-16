@@ -80,9 +80,9 @@
       dash-show-running = true;
       dash-show-home = true;
     };
-    
-  "org/gnome/shell/extensions/gsconnect" = {
-    enable = true;
+
+    "org/gnome/shell/extensions/gsconnect" = {
+      enable = true;
     };
   };
 }
