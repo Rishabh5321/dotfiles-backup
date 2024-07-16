@@ -43,6 +43,7 @@
       lazydocker
       libreoffice
       micro
+      obsidian
       onlyoffice-bin_latest
       pfetch-rs
       peaclock

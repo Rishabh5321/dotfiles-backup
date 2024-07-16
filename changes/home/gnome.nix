@@ -52,7 +52,7 @@
     "org/gnome/mutter" = {
       overlay-key = "Super_L";
       edge-tiling = true;
-      focus-mode = "sloppy";
+      dynamic-workspaces = true;
     };
 
     "org/gnome/shell" = {
@@ -66,10 +66,6 @@
         "spotify.desktop"
         "org.gnome.Bottles.desktop"
       ];
-    };
-
-    "org.gnome.shell.overrides" = {
-      dynamic-workspaces = true;
     };
   };
 }

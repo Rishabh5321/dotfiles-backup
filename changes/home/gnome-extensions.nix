@@ -81,6 +81,10 @@
       dash-show-home = true;
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      focus-mode = "mouse";
+    };
+
     "org/gnome/shell/extensions/gsconnect" = {
       enable = true;
     };
