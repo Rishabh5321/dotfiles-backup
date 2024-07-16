@@ -28,7 +28,7 @@
     };
 
     "org/gnome/desktop/background" = {
-        #picture-uri="file:///home/${username}/Pictures/Wallpapers/${wallpaper}";
+      #picture-uri="file:///home/${username}/Pictures/Wallpapers/${wallpaper}";
     };
 
     "org/gnome/desktop/notifications" = {
