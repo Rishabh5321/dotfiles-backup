@@ -65,7 +65,7 @@
         "discord.desktop"
         "spotify.desktop"
         "code.desktop"
-        "cursor.desktop"        
+        "cursor.desktop"
         "github-desktop.desktop"
         "steam.desktop"
         "heroic.desktop"

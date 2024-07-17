@@ -38,9 +38,8 @@
   '';
 
   services.udev.extraRules = ''
-  ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
-'';
-
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+  '';
 
   services.logind.lidSwitch = "suspend";
 
