@@ -13,7 +13,7 @@
   #  ];
   #
   
-    services.xserver = {
+ /*   services.xserver = {
       enable = true;
       libinput.enable = true;
       displayManager.lightdm.enable = true;
@@ -22,9 +22,9 @@
       #   enable = true;
       #  };
     };
-  
+ */ 
 
-  /*services.xserver = {
+  services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
@@ -55,5 +55,5 @@
     pkgs.gnome.dconf-editor
     #pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.forge
-  ];*/
+  ];
 }
