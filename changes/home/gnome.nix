@@ -64,7 +64,12 @@
         "org.gnome.Nautilus.desktop"
         "discord.desktop"
         "spotify.desktop"
-        "org.gnome.Bottles.desktop"
+        "code.desktop"
+        "cursor.desktop"        
+        "github-desktop.desktop"
+        "steam.desktop"
+        "heroic.desktop"
+        "lutris.desktop"
       ];
     };
   };

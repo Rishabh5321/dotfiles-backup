@@ -37,6 +37,11 @@
     AllowSuspendThenHibernate=yes
   '';
 
+  services.udev.extraRules = ''
+  ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+'';
+
+
   services.logind.lidSwitch = "suspend";
 
   services.logind.lidSwitchDocked = "ignore";
