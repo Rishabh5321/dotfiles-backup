@@ -16,10 +16,11 @@
     ./direnv.nix
     ./firefox.nix
     ./git.nix
-    ./gnome-extensions.nix
-    ./gnome.nix
+    #./gnome-extensions.nix
+    #./gnome.nix
     ./hypridle.nix
     ./hyprlock.nix
+    #./plasma.nix
     #./idleinhibitor.nix
     ./kitty.nix
     ./packages.nix

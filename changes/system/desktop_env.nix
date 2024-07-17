@@ -12,20 +12,19 @@
   #    gnome.gnome-shell-extensions
   #  ];
   #
-  /*
+  
     services.xserver = {
       enable = true;
       libinput.enable = true;
       displayManager.lightdm.enable = true;
-      desktopManager.xfce.enable = true;
-      displayManager.defaultSession = "hyprland";
-      windowManager.i3 = {
-         enable = true;
-        };
+      desktopManager.budgie.enable = true;
+      #windowManager.i3 = {
+      #   enable = true;
+      #  };
     };
-  */
+  
 
-  services.xserver = {
+  /*services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
@@ -56,5 +55,5 @@
     pkgs.gnome.dconf-editor
     #pkgs.gnomeExtensions.vitals
     pkgs.gnomeExtensions.forge
-  ];
+  ];*/
 }
