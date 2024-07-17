@@ -8,18 +8,18 @@
   ...
 }:
 {
-  home.file.".config/starship.toml".source = ./assets/starship.toml;
+  #home.file.".config/starship.toml".source = ./assets/starship.toml;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-    #oh-my-zsh = {
-    #  enable = true;
-    #  plugins = ["git"];
-    #  theme = "agnoster";
-    #};
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git"];
+      theme = "agnoster";
+    };
     initExtraFirst = ''
       HISTFILE=~/.histfile
       HISTSIZE=1000
@@ -47,7 +47,6 @@
       if [ -f $HOME/.zshrc-personal ]; then
         source $HOME/.zshrc-personal
       fi
-      eval "$(starship init zsh)"
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
