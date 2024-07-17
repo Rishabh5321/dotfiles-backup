@@ -12,8 +12,9 @@
   #    gnome.gnome-shell-extensions
   #  ];
   #
-  
- /*   services.xserver = {
+
+  /*
+    services.xserver = {
       enable = true;
       libinput.enable = true;
       displayManager.lightdm.enable = true;
@@ -22,7 +23,7 @@
       #   enable = true;
       #  };
     };
- */ 
+  */
 
   services.xserver = {
     enable = true;
