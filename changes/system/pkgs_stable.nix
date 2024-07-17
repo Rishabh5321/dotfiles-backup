@@ -43,6 +43,7 @@
       lazycli
       lazydocker
       libreoffice
+      nixos-generators
       micro
       obsidian
       onlyoffice-bin_latest
