@@ -53,6 +53,7 @@
       #prismlauncher
       qbittorrent
       ranger
+      resilio-sync
       spicetify-cli
       spotdl
       speedtest-cli

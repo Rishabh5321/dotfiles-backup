@@ -25,7 +25,7 @@
     ./proton.nix
     ./sound.nix
     ./stylix.nix
-    ./syncthing.nix
+    #./syncthing.nix
     ./swap.nix
     ./upgrade.nix
     ./users.nix
