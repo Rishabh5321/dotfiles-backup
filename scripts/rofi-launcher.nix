@@ -5,7 +5,7 @@ pkgs.writeShellScriptBin "rofi-launcher" ''
     pkill -x rofi
     exit 0
   fi
-  
+
   # Launch Rofi with layer shell protocol
   rofi -show drun
 ''
