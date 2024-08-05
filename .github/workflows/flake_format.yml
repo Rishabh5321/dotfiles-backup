@@ -1,6 +1,6 @@
-name: Flake Check
+name: Flake Format and Check
 
-on: 
+on:
   push:
   pull_request:
   workflow_dispatch:
@@ -10,14 +10,14 @@ on:
 jobs:
   flake-check:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
 
     steps:
     - name: Send Test Telegram Notification
       run: |
-        MESSAGE="Checking repo Rishabh5321/dotfiles please wait for response"
+        MESSAGE="Checking repo Rishabh5321/nix-dotfiles please wait for response"
         curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id=$CHAT_ID \
           -d text="$MESSAGE"
@@ -31,8 +31,8 @@ jobs:
 
     - name: Install Nix
       id: install-nix
-      uses: cachix/install-nix-action@v26
-      with: 
+      uses: cachix/install-nix-action@V27
+      with:
         nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Install Nix Linting and Formatting Tools
@@ -47,19 +47,15 @@ jobs:
       id: run-nix-fmt
       run: nix fmt
 
-    - name: Nix Flake Check - Manual
-      id: nix-flake-check-manual
-      run: nix flake check
-
     - name: Nix Flake Checker
       id: nix-flake-checker
-      uses: DeterminateSystems/flake-checker-action@v5
+      uses: DeterminateSystems/flake-checker-action@v8
 
     - name: Commit
       id: commit
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: Auto lint/format        
+        commit_message: Auto lint/format
 
     - name: Set Result
       if: failure()
